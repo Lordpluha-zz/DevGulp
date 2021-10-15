@@ -5,9 +5,9 @@
 
 ### Стили:
 
-gulp-scss
-gulp-postcss
-gulp-sourcemaps
+gulp-scss,  
+gulp-postcss,  
+gulp-sourcemaps,  
 ...
 
 
