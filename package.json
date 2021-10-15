@@ -1,0 +1,26 @@
+{
+  "name": "devgulp",
+  "version": "1.0.0",
+  "description": "Создание нового gulpfile на основе современных тендеций front-end dev(postcss ...)",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lordpluha/DevGulp.git"
+  },
+  "author": "Teslyuk Vladislav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lordpluha/DevGulp/issues"
+  },
+  "homepage": "https://github.com/Lordpluha/DevGulp#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-scss": "^1.4.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.3.9"
+  }
+}
