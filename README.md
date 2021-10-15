@@ -22,7 +22,7 @@
 
 ## Using
 
-Суть всего gulp состоит в использовании автоматизирующих функций, написаных на node.js
+Main target of gulpfile is using automatisation functions, writen on node.js.
 
 > You might have to installed *Node.js* and *git in you terminal*
 
@@ -39,59 +39,7 @@
 
 ## Структура
 
-html ---
-    'blocks': {
-        'files': [
-            'header.html',
-            'nav.html',
-            'aside.html',
-            'article.html',
-            'footer.html'
-        ]
-    },
-    'files': [
-        'index.html',
-        'index.min.html',
-        'index.src.html'
-    ]
-},
-'js': {
-    'scripts': {
-        'files': [
-            'script.js',
-            'script.min.js'
-        ]
-    }
-},
-'styles': {
-    'css': {
-        'files': [
-            'styles.css',
-            'styles.min.css',
-            'styles.css.map'
-        ]
-    },
-    'scss': {
-        'files': [
-            'styles.scss',
 
-            '_zer0.scss',
-            '_mixins.scss',
-            '_fonts.scss',
-            '_preloader.scss',
-
-            '_header.scss',
-            '_aside.scss',
-            '_nav.scss',
-            '_article.scss',
-            '_foooter.scss',
-
-            '_media.scss'
-        ]
-    },
-    'fonts': {
-
-    }
 
 ## Functions
 
