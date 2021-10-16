@@ -292,7 +292,7 @@ Contact with me)
 
 [![Gmail][gmail_ico]][gmail_href] \
 [![Phone][phone_ico]][phone] \
-[![Instagram][instagram_ico]][inst_href] \
+[![Instagram][instagram_ico]][inst_href]
 
 
 
