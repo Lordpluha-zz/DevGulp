@@ -292,7 +292,18 @@ Contact with me)
 
 *Gmail:* **Tesluakevlad@gmail.com** \
 *Phone:* **+380689448449** \
-[![instagram_ico]][def__init__inst]
+[![Instagram][instagram_ico]][def__init__inst] \
 
-[instagram_ico]: https://raw.githubusercontent.com/Lordpluha/DevGulp/main/inst_ico.png
-[def__init__inst]: https://www.instagram.com/def.__init__/
+
+
+
+
+[gmail_ico]: https://raw.githubusercontent.com/Lordpluha/DevGulp/main/gmail_ico.png  
+[gmail_href]: Tesluakevlad@gmail.com
+
+[phone_ico]: https://raw.githubusercontent.com/Lordpluha/DevGulp/main/phone_ico.png
+[phone]: 
+
+
+[instagram_ico]:    https://raw.githubusercontent.com/Lordpluha/DevGulp/main/inst_ico.png
+[inst_href]:        https://www.instagram.com/def.__init__/
