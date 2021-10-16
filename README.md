@@ -158,39 +158,73 @@ Functions
 --------------------------------------------------
 
 * ### CPF (CreateProjectFiles)
+
 > This function must goin throught all folder-base and callback all element with fucntion, which creating selected folder in selected depth of architecture
 
-### * AddPage
+
+
+* ### AddPage
+
 > This function can add page with useless name which you can set in console with current fucntion
 
-### * Browser
+
+
+* ### Browser
+
 > This function must be responsible for **local server** of a page and injection file in project *on the fly*.
 
-### * Index
+
+
+* ### Index
+
 > This function responsible for processing html ([``], [``], [``]) and php ([``], [``], [``]) files and calling reload of a page when they are changed.
 
-### * Styles
+
+
+* ### Styles
+
 > This fucntion responsible for processing scss files 
 
-### * Scripts
+
+
+* ### Scripts
+
 > ...
 
-### * Img
+
+
+* ### Img
+
 > ...
 
-### * FileWatcher
+
+
+* ### FileWatcher
+
 > ...
 
-### Build
+
+
+* ### Build
+
 > ...
 
-### ResizeImg
+
+
+* ### ResizeImg
+
 > ...
 
-### Fonts
+
+
+* ### Fonts
+
 > ...
 
-### GitHub
+
+
+* ### GitHub
+
 > ...
 
 
