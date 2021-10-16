@@ -292,3 +292,7 @@ Contact with me)
 
 *Gmail:* **Tesluakevlad@gmail.com** \
 *Phone:* **+380689448449**
+[![Instagram][instagram_ico][def__init__inst]]
+
+[instagram_ico]: https://raw.githubusercontent.com/Lordpluha/DevGulp/main/instagram_icon.png
+[def__init__inst]: https://www.instagram.com/def.__init__/
