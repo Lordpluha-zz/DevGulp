@@ -157,7 +157,7 @@ Structure
 Functions
 --------------------------------------------------
 
-### * CPF (CreateProjectFiles)
+* ### CPF (CreateProjectFiles)
 > This function must goin throught all folder-base and callback all element with fucntion, which creating selected folder in selected depth of architecture
 
 ### * AddPage
