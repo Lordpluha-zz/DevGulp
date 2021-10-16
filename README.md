@@ -290,9 +290,9 @@ Futures
 Contact with me)
 --------------------------------------------------
 
-*Gmail:* **Tesluakevlad@gmail.com** \
-*Phone:* **+380689448449** \
-[![Instagram][instagram_ico]][def__init__inst] \
+[![Gmail][gmail_ico]][gmail_href] \
+[![Phone][phone_ico]][phone] \
+[![Instagram][instagram_ico]][inst_href] \
 
 
 
@@ -302,7 +302,7 @@ Contact with me)
 [gmail_href]: Tesluakevlad@gmail.com
 
 [phone_ico]: https://raw.githubusercontent.com/Lordpluha/DevGulp/main/phone_ico.png
-[phone]: 
+[phone]: +380689448449
 
 
 [instagram_ico]:    https://raw.githubusercontent.com/Lordpluha/DevGulp/main/inst_ico.png
