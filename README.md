@@ -38,111 +38,111 @@ Main target of gulpfile is using automatisation functions, writen on node.js.
 *Have a good work)*
 
 ## Структура
+```
+┌────────────────────┐
+│DevGulp/Your_project├─┐
+└────────────────────┘ │
+                       ├─►src
+                       │  │
+                       │  └─►Current_page
+                       │          │
+                       │          ├─►Html
+                       │          │  │
+                       │          │  ├─►Blocks───────────┐►header.html
+                       │          │  │                   │
+                       │          │  │►index.html        │►nav.html
+                       │          │  │                   │
+                       │          │  │►index.src.html    │►aside.html
+                       │          │  │                   │
+                       │          │  └►index.min.html    │►article.html
+                       │          │                      │
+                       │          │                      └►footer.html
+                       │          │
+                       │          ├─►Js
+                       │          │  │
+                       │          │  ├─►scripts─┐►scripts.js
+                       │          │  │          │
+                       │          │  │          └►script.min.js
+                       │          │  │
+                       │          │  ├─►Ajax─┐►AjSx.js
+                       │          │  │       │
+                       │          │  │       └►Ajax.min.js
+                       │          │  │
+                       │          │  └─►Json─┐►data.json
+                       │          │          │
+                       │          │          └►data.min.json
+                       │          │
+                       │          └─►Styles
+                       │               │
+                       │               ├─►Fonts──►....
+                       │               │
+                       │               ├─►Scss──┐►styles.scss
+                       │               │        │
+                       │               │        │►_header.scss
+                       │               │        │
+                       │               │        │►_article.scss
+                       │               │        │
+                       │               │        │►_aside.scss
+                       │               │        │
+                       │               │        │►_nav.scss
+                       │               │        │
+                       │               │        │►_footer.scss
+                       │               │        │
+                       │               │        │►_fonts.scss
+                       │               │        │
+                       │               │        │►_fonts.scss.py
+                       │               │        │
+                       │               │        │►_mixins.scss
+                       │               │        │
+                       │               │        │►_zer0.scss
+                       │               │        │
+                       │               │        │►_media.scss
+                       │               │        │
+                       │               │        └►_preloader.scss
+                       │               │
+                       │               └─►Css─┐►styles.css
+                       │                      │
+                       │                      │►styles.min.css
+                       │                      │
+                       │                      └►styles.css.map
+                       │
+                       │
+                       │
+                       └───►dist
+                            │
+                            └─►Current_page
+                                    │
+                                    ├─►Html
+                                    │  │
+                                    │  │►index.html
+                                    │  │
+                                    │  │►index.src.html
+                                    │  │
+                                    │  └►index.min.html
+                                    │
+                                    ├─►Js
+                                    │  │
+                                    │  ├─►scripts─┐►scripts.js
+                                    │  │          │
+                                    │  │          └►script.min.js
+                                    │  │
+                                    │  ├─►Ajax─┐►AjSx.js
+                                    │  │       │
+                                    │  │       └►Ajax.min.js
+                                    │  │
+                                    │  └─►Json─┐►data.json
+                                    │          │
+                                    │          └►data.min.json
+                                    │
+                                    └─►Styles
+                                         │
+                                         ├─►Fonts──►....
+                                         │
+                                         └─►Css─┐►styles.css
+                                                │
+                                                └►styles.min.css
 
-┌────────────────────┐\
-│DevGulp/Your_project├─┐\
-└────────────────────┘ │\
-                       ├─►src\
-                       │  │\
-                       │  └─►Current_page\
-                       │          │\
-                       │          ├─►Html\
-                       │          │  │\
-                       │          │  ├─►Blocks───────────┐►header.html\
-                       │          │  │                   │\
-                       │          │  │►index.html        │►nav.html\
-                       │          │  │                   │\
-                       │          │  │►index.src.html    │►aside.html\
-                       │          │  │                   │\
-                       │          │  └►index.min.html    │►article.html\
-                       │          │                      │\
-                       │          │                      └►footer.html\
-                       │          │\
-                       │          ├─►Js\
-                       │          │  │\
-                       │          │  ├─►scripts─┐►scripts.js\
-                       │          │  │          │\
-                       │          │  │          └►script.min.js\
-                       │          │  │\
-                       │          │  ├─►Ajax─┐►AjSx.js\
-                       │          │  │       │\
-                       │          │  │       └►Ajax.min.js\
-                       │          │  │\
-                       │          │  └─►Json─┐►data.json\
-                       │          │          │\
-                       │          │          └►data.min.json\
-                       │          │\
-                       │          └─►Styles\
-                       │               │\
-                       │               ├─►Fonts──►....\
-                       │               │\
-                       │               ├─►Scss──┐►styles.scss\
-                       │               │        │\
-                       │               │        │►_header.scss\
-                       │               │        │\
-                       │               │        │►_article.scss\
-                       │               │        │\
-                       │               │        │►_aside.scss\
-                       │               │        │\
-                       │               │        │►_nav.scss\
-                       │               │        │\
-                       │               │        │►_footer.scss\
-                       │               │        │\
-                       │               │        │►_fonts.scss\
-                       │               │        │\
-                       │               │        │►_fonts.scss.py\
-                       │               │        │\
-                       │               │        │►_mixins.scss\
-                       │               │        │\
-                       │               │        │►_zer0.scss\
-                       │               │        │\
-                       │               │        │►_media.scss\
-                       │               │        │\
-                       │               │        └►_preloader.scss\
-                       │               │\
-                       │               └─►Css─┐►styles.css\
-                       │                      │\
-                       │                      │►styles.min.css\
-                       │                      │\
-                       │                      └►styles.css.map\
-                       │\
-                       │\
-                       │\
-                       └───►dist\
-                            │\
-                            └─►Current_page\
-                                    │\
-                                    ├─►Html\
-                                    │  │\
-                                    │  │►index.html\
-                                    │  │\
-                                    │  │►index.src.html\
-                                    │  │\
-                                    │  └►index.min.html\
-                                    │\
-                                    ├─►Js\
-                                    │  │\
-                                    │  ├─►scripts─┐►scripts.js\
-                                    │  │          │\
-                                    │  │          └►script.min.js\
-                                    │  │\
-                                    │  ├─►Ajax─┐►AjSx.js\
-                                    │  │       │\
-                                    │  │       └►Ajax.min.js\
-                                    │  │\
-                                    │  └─►Json─┐►data.json\
-                                    │          │\
-                                    │          └►data.min.json\
-                                    │\
-                                    └─►Styles\
-                                         │\
-                                         ├─►Fonts──►....\
-                                         │\
-                                         └─►Css─┐►styles.css\
-                                                │\
-                                                └►styles.min.css\
-
-
+```
 ## Functions
 
 ### CPF (CreateProjectFiles):
