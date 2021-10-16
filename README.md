@@ -1,7 +1,11 @@
-# DevGulp
- Creating of new gulpfile based on new modern tendation of front-end dev(postcss ...)
+DevGulp Project
+============================================================================
+## Main targets of a project
+ Creating of new gulpfile based on new modern tendation of front-end dev([`gulp-postcss`] ...) in futures maybe i will concatenate with back-end gulp-file for more effectiveness.
 
-## Plugins
+
+Plugins
+--------------------------------------------------
 
 ### CSS
 
@@ -13,7 +17,6 @@
 [`gulp-sass`]:       https://www.npmjs.com/package/gulp-sass
 [`gulp-postcss`]:    https://www.npmjs.com/package/gulp-postcss
 [`gulp-sourcemaps`]: https://www.npmjs.com/package/gulp-sourcemaps
-...
 
 ### Javascript
 
@@ -25,11 +28,12 @@
 
 ### Tools
 
-## Using
+Using
+--------------------------------------------------
 
 Main target of gulpfile is using automatisation functions, writen on node.js.
 
-> You might have to installed *Node.js* and *git in you terminal***!!!**
+> You might have to installed *Node.js* and *git in you terminal* **!!!**
 
 1. ***Open your terminal in directory which you want and then copy next***
 2. ```npm init```
@@ -41,7 +45,9 @@ Main target of gulpfile is using automatisation functions, writen on node.js.
 
 **Have a good work)**
 
-## Structure
+Structure
+--------------------------------------------------
+
 ```
 ┌────────────────────┐
 │DevGulp/Your_project├─┐
@@ -147,13 +153,81 @@ Main target of gulpfile is using automatisation functions, writen on node.js.
                                                 └►styles.min.css
 
 ```
-## Functions
 
-### CPF (CreateProjectFiles):
-This function must goin throught all folder-base and callback all element with fucntion, which creating selected folder in selected depth of architecture
+Functions
+--------------------------------------------------
+
+### CPF (CreateProjectFiles)
+> This function must goin throught all folder-base and callback all element with fucntion, which creating selected folder in selected depth of architecture
+
+### AddPage
+> This function can add page with useless name which you can set in console with current fucntion
+
+### Browser
+> This function must be responsible for **local server** of a page and injection file in project *on the fly*.
+
+### Index
+> This function responsible for processing html ([``], [``], [``]) and php ([``], [``], [``]) files and calling reload of a page when they are changed.
+
+### Styles
+> This fucntion responsible for processing scss files 
+
+### Scripts
+> ...
+
+### Img
+> ...
+
+### FileWatcher
+> ...
+
+### Build
+> ...
+
+### ResizeImg
+> ...
+
+### Fonts
+> ...
+
+### GitHub
+> ...
 
 
 
-## Feautures
+Tasks
+--------------------------------------------------
+
+### default
+> ...
+
+### build
+> ...
+
+Futures
+--------------------------------------------------
+
 * Develope Build function
-* 
+* [`gulp-changed`] и [`gulp-newer`] 
+* [`tmi`]
+* [`grunt-phantomas`]
+* [`grunt-gitbook`]
+* [`gulp-duration`]
+* [`grunt-conventional-changelog`]
+* [`grunt-usebanner`]
+
+
+
+
+
+
+
+
+
+
+
+Contact with me)
+--------------------------------------------------
+
+*gmail:* **Tesluakevlad@gmail.com**
+*phone:* **+380689448449**
