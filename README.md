@@ -11,11 +11,35 @@ Plugins
 
 * [`gulp-sass`]
 * [`gulp-postcss`]
+    ### Postcss plugins
+    * [``] -
+    * [``] -
+    * [``] -
+    * [``] -
+    * [``] -
+    * ...
+
+    [``]:
+    [``]:
+    [``]:
+    [``]:
+    [``]:
+
+
 * [`gulp-sourcemaps`]
 * ...
 
+
+
+
+
+
+
+
 [`gulp-sass`]:       https://www.npmjs.com/package/gulp-sass
 [`gulp-postcss`]:    https://www.npmjs.com/package/gulp-postcss
+
+
 [`gulp-sourcemaps`]: https://www.npmjs.com/package/gulp-sourcemaps
 
 ### Javascript
@@ -252,16 +276,19 @@ Futures
 
 
 
-
-
-
-
-
+[`gulp-changed`]:                   https://github.com/Lordpluha/DevGulp
+[`gulp-newer`] :                    https://github.com/Lordpluha/DevGulp
+[`tmi`]:                            https://github.com/Lordpluha/DevGulp
+[`grunt-phantomas`]:                https://github.com/Lordpluha/DevGulp
+[`grunt-gitbook`]:                  https://github.com/Lordpluha/DevGulp
+[`gulp-duration`]:                  https://github.com/Lordpluha/DevGulp
+[`grunt-conventional-changelog`]:   https://github.com/Lordpluha/DevGulp
+[`grunt-usebanner`]:                https://github.com/Lordpluha/DevGulp
 
 
 
 Contact with me)
 --------------------------------------------------
 
-*gmail:* **Tesluakevlad@gmail.com**
-*phone:* **+380689448449**
+*Gmail:* **Tesluakevlad@gmail.com** \
+*Phone:* **+380689448449**
