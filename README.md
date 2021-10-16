@@ -294,5 +294,5 @@ Contact with me)
 *Phone:* **+380689448449** \
 [![instagram_ico]][def__init__inst]
 
-[instagram_ico]: https://cdn.icon-icons.com/icons2/1584/PNG/512/3721672-instagram_108066.png
+[instagram_ico]: https://raw.githubusercontent.com/Lordpluha/DevGulp/main/inst_ico.png
 [def__init__inst]: https://www.instagram.com/def.__init__/
