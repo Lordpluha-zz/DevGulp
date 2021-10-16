@@ -29,18 +29,17 @@
 
 Main target of gulpfile is using automatisation functions, writen on node.js.
 
-> You might have to installed *Node.js* and *git in you terminal*
+> You might have to installed *Node.js* and *git in you terminal***!!!**
 
-*Open your terminal in directory which you want and then copy next  
+1. ***Open your terminal in directory which you want and then copy next***
+2. ```npm init```
+3. ***Set needed options***
+4. ```git clone https://github.com/Lordpluha/DevGulp.git```
+5. ```cd DevGulp```
+6. ```npm i```
+7. ```gulp CPF```
 
-1. ```npm init```
-2. *Set needed options*
-3. ```git clone https://github.com/Lordpluha/DevGulp.git```
-4. ```cd DevGulp```
-5. ```npm i```
-6. ```gulp CPF```
-
-##### *Have a good work)*
+**Have a good work)**
 
 ## Structure
 ```
