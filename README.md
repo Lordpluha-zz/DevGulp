@@ -5,9 +5,9 @@
 
 ### CSS
 
-- gulp-scss\
-- gulp-postcss\
-- gulp-sourcemaps\ 
+- [`gulp-sass`]             https://www.npmjs.com/package/gulp-sass
+- [`gulp-postcss`]          https://www.npmjs.com/package/gulp-postcss
+- [`gulp-sourcemaps`]       https://www.npmjs.com/package/gulp-sourcemaps
 ...
 
 ### Javascript
@@ -28,16 +28,16 @@ Main target of gulpfile is using automatisation functions, writen on node.js.
 
 *Open your terminal in directory which you want and then copy next  
 
-1. npm init
-    *Set needed options*
-2. git clone https://github.com/Lordpluha/DevGulp.git
-3. cd DevGulp
-4. npm i
-5. gulp CPF
+1. ```npm init```
+2. *Set needed options*
+3. ```git clone https://github.com/Lordpluha/DevGulp.git```
+4. ```cd DevGulp```
+5. ```npm i```
+6. ```gulp CPF```
 
-*Have a good work)*
+##### *Have a good work)*
 
-## Структура
+## Structure
 ```
 ┌────────────────────┐
 │DevGulp/Your_project├─┐

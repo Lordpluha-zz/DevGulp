@@ -1,7 +1,7 @@
 // ============================ [ Plugins ] ============================ \\
 const gulp = require('gulp'),
 	// SCSS
-			scss 			= require('gulp-scss'),
+			scss 			= require('gulp-sass')(require('sass')),
 		// PostCSS (CSS4)
 			postcss 		= require('gulp-postcss'),
 		// PostCSS plugins
