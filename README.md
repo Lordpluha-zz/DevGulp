@@ -5,9 +5,9 @@
 
 ### CSS
 
-- [`gulp-sass`]             https://www.npmjs.com/package/gulp-sass
-- [`gulp-postcss`]          https://www.npmjs.com/package/gulp-postcss
-- [`gulp-sourcemaps`]       https://www.npmjs.com/package/gulp-sourcemaps
+- [`gulp-sass`]:            https://www.npmjs.com/package/gulp-sass
+- [`gulp-postcss`]:         https://www.npmjs.com/package/gulp-postcss
+- [`gulp-sourcemaps`]:      https://www.npmjs.com/package/gulp-sourcemaps
 ...
 
 ### Javascript
@@ -150,5 +150,6 @@ This function must goin throught all folder-base and callback all element with f
 
 
 
-## Проблемы
-    Develope Build function
+## Feautures
+- Develope Build function
+- 
