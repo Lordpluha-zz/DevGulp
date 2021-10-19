@@ -13,53 +13,53 @@ Plugins
 * [`gulp-postcss`]
 
 #### Solve Global CSS Problem
-    * [`postcss-use`] allows you to explicitly set PostCSS plugins within CSS and execute them only for the current file.
-    * [`postcss-modules`] and [`react-css-modules`] automatically isolate selectors within components.
-    * [`postcss-autoreset`] is an alternative to using a global reset that is better for isolatable components.
-    * [`postcss-initial`] adds `all: initial` support, which resets all inherited styles.
-    * [`cq-prolyfill`] adds container query support, allowing styles that respond to the width of the parent.
-    \
-    \
+* [`postcss-use`] allows you to explicitly set PostCSS plugins within CSS and execute them only for the current file.
+* [`postcss-modules`] and [`react-css-modules`] automatically isolate selectors within components.
+* [`postcss-autoreset`] is an alternative to using a global reset that is better for isolatable components.
+* [`postcss-initial`] adds `all: initial` support, which resets all inherited styles.
+* [`cq-prolyfill`] adds container query support, allowing styles that respond to the width of the parent.
+\
+\
 
 #### Use Future CSS, Today
-    * [`autoprefixer`] adds vendor prefixes, using data from Can I Use.
-    * [`postcss-preset-env`] allows you to use future CSS features today.
-    \
-    \
+* [`autoprefixer`] adds vendor prefixes, using data from Can I Use.
+* [`postcss-preset-env`] allows you to use future CSS features today.
+\
+\
 
 #### Better CSS Readability
-    * [`postcss-nested`] unwraps nested rules the way Sass does.
-    * [`postcss-sorting`] sorts the content of rules and at-rules.
-    * [`postcss-utilities`] includes the most commonly used shortcuts and helpers.
-    * [`short`] adds and extends numerous shorthand properties.
-    \
-    \
+* [`postcss-nested`] unwraps nested rules the way Sass does.
+* [`postcss-sorting`] sorts the content of rules and at-rules.
+* [`postcss-utilities`] includes the most commonly used shortcuts and helpers.
+* [`short`] adds and extends numerous shorthand properties.
+\
+\
 
 #### Images and Fonts
-    * [`postcss-assets`] inserts image dimensions and inlines files.
-    * [`postcss-sprites`] generates image sprites.
-    * [`font-magician`] generates all the `@font-face` rules needed in CSS.
-    * [`postcss-inline-svg`] allows you to inline SVG and customize its styles.
-    * [`postcss-write-svg`] allows you to write simple SVG directly in your CSS.
-    * [`webp-in-css`] to use WebP image format in CSS background.
-    * [`avif-in-css`] to use AVIF image format in CSS background.
-    \
-    \
+* [`postcss-assets`] inserts image dimensions and inlines files.
+* [`postcss-sprites`] generates image sprites.
+* [`font-magician`] generates all the `@font-face` rules needed in CSS.
+* [`postcss-inline-svg`] allows you to inline SVG and customize its styles.
+* [`postcss-write-svg`] allows you to write simple SVG directly in your CSS.
+* [`webp-in-css`] to use WebP image format in CSS background.
+* [`avif-in-css`] to use AVIF image format in CSS background.
+\
+\
 
 #### Linters
-    * [`stylelint`] is a modular stylesheet linter.
-    * [`stylefmt`] is a tool that automatically formats CSS
-      according `stylelint` rules.
-    * [`doiuse`] lints CSS for browser support, using data from Can I Use.
-    * [`colorguard`] helps you maintain a consistent color palette.
-    \
-    \
+* [`stylelint`] is a modular stylesheet linter.
+* [`stylefmt`] is a tool that automatically formats CSS
+  according `stylelint` rules.
+* [`doiuse`] lints CSS for browser support, using data from Can I Use.
+* [`colorguard`] helps you maintain a consistent color palette.
+\
+\
 
 #### Other
-    * [`postcss-rtl`] combines both-directional (left-to-right and right-to-left) styles in one CSS file.
-    * [`cssnano`] is a modular CSS minifier.
-    * [`lost`] is a feature-rich `calc()` grid system.
-    * [`rtlcss`] mirrors styles for right-to-left locales.
+* [`postcss-rtl`] combines both-directional (left-to-right and right-to-left) styles in one CSS file.
+* [`cssnano`] is a modular CSS minifier.
+* [`lost`] is a feature-rich `calc()` grid system.
+* [`rtlcss`] mirrors styles for right-to-left locales.
 
 * [`gulp-sourcemaps`]
 * ...
