@@ -18,22 +18,19 @@ Plugins
 * [`postcss-autoreset`] is an alternative to using a global reset that is better for isolatable components.
 * [`postcss-initial`] adds `all: initial` support, which resets all inherited styles.
 * [`cq-prolyfill`] adds container query support, allowing styles that respond to the width of the parent.
-\
-\
+
 
 #### Use Future CSS, Today
 * [`autoprefixer`] adds vendor prefixes, using data from Can I Use.
 * [`postcss-preset-env`] allows you to use future CSS features today.
-\
-\
+
 
 #### Better CSS Readability
 * [`postcss-nested`] unwraps nested rules the way Sass does.
 * [`postcss-sorting`] sorts the content of rules and at-rules.
 * [`postcss-utilities`] includes the most commonly used shortcuts and helpers.
 * [`short`] adds and extends numerous shorthand properties.
-\
-\
+
 
 #### Images and Fonts
 * [`postcss-assets`] inserts image dimensions and inlines files.
@@ -43,8 +40,7 @@ Plugins
 * [`postcss-write-svg`] allows you to write simple SVG directly in your CSS.
 * [`webp-in-css`] to use WebP image format in CSS background.
 * [`avif-in-css`] to use AVIF image format in CSS background.
-\
-\
+
 
 #### Linters
 * [`stylelint`] is a modular stylesheet linter.
@@ -52,8 +48,7 @@ Plugins
   according `stylelint` rules.
 * [`doiuse`] lints CSS for browser support, using data from Can I Use.
 * [`colorguard`] helps you maintain a consistent color palette.
-\
-\
+
 
 #### Other
 * [`postcss-rtl`] combines both-directional (left-to-right and right-to-left) styles in one CSS file.
@@ -98,7 +93,7 @@ Plugins
 [`short`]:                      https://github.com/jonathantneal/postcss-short
 [`lost`]:                       https://github.com/peterramsing/lost
 
-[`gulp-sourcemaps`]: https://www.npmjs.com/package/gulp-sourcemaps
+[`gulp-sourcemaps`]:            https://www.npmjs.com/package/gulp-sourcemaps
 
 ### Javascript
 
@@ -168,35 +163,35 @@ Structure
                        │               │
                        │               ├─►Fonts──►....
                        │               │
-                       │               ├─►Scss──┐►styles.scss
-                       │               │        │
-                       │               │        │►_header.scss
-                       │               │        │
-                       │               │        │►_article.scss
-                       │               │        │
-                       │               │        │►_aside.scss
-                       │               │        │
-                       │               │        │►_nav.scss
-                       │               │        │
-                       │               │        │►_footer.scss
-                       │               │        │
-                       │               │        │►_fonts.scss
-                       │               │        │
-                       │               │        │►_fonts.scss.py
-                       │               │        │
-                       │               │        │►_mixins.scss
-                       │               │        │
-                       │               │        │►_zer0.scss
-                       │               │        │
-                       │               │        │►_media.scss
-                       │               │        │
-                       │               │        └►_preloader.scss
+                       │               ├─►css.src──┐►styles.css
+                       │               │           │
+                       │               │           │►_header.css
+                       │               │           │
+                       │               │           │►_article.css
+                       │               │           │
+                       │               │           │►_aside.css
+                       │               │           │
+                       │               │           │►_nav.css
+                       │               │           │
+                       │               │           │►_footer.css
+                       │               │           │
+                       │               │           │►_fonts.css
+                       │               │           │
+                       │               │           │►_fonts.css.py
+                       │               │           │
+                       │               │           │►_mixins.css
+                       │               │           │
+                       │               │           │►_zer0.css
+                       │               │           │
+                       │               │           │►_media.css
+                       │               │           │
+                       │               │           └►_preloader.css
                        │               │
-                       │               └─►Css─┐►styles.css
-                       │                      │
-                       │                      │►styles.min.css
-                       │                      │
-                       │                      └►styles.css.map
+                       │               └─►css.dist─┐►styles.css
+                       │                           │
+                       │                           │►styles.min.css
+                       │                           │
+                       │                           └►styles.css.map
                        │
                        │
                        │
@@ -265,43 +260,31 @@ Functions
 
 * ### Styles
 
-> This function responsible for processing scss files 
+> This function responsible for processing css files and perfectioning them.
 
 
 
 * ### Scripts
 
-> ...
+> This function responsible for processing js files and perfectioning them.
 
 
 
 * ### Img
 
-> ...
+> This function responsible for processing images.
 
 
 
 * ### FileWatcher
 
-> ...
+> This function responsible for watching files (html, php, js, json, css )
 
 
 
 * ### Build
 
-> ...
-
-
-
-* ### ResizeImg
-
-> ...
-
-
-
-* ### Fonts
-
-> ...
+> This function must build project from src dir to dist dir.
 
 
 
