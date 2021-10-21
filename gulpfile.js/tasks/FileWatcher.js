@@ -1,6 +1,6 @@
 // Watching files
 function fileWatcher(event) {
-	// gulp.watch('./**/**/css.src/*.css', styles(event));
+	$.gulp.watch('./src/**/styles/css.src/*.css', styles(event));
 
 };
 

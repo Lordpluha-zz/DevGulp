@@ -1,13 +1,13 @@
 'use strict';
 
 // ============================ [ Plugins ] ============================ \\
-const gulp = require('gulp');
+global.$ = {
+	gulp = require('gulp'),
 
 // Tasks
 	tasks = {
 	  	'addpage':	 	require('./tasks/AddPage'),
 	  	'build': 		require('./tasks/build'),
-	  	'CPF': 		 	require('./tasks/CPF'),
 	  	'FileWatcher': 	require('./tasks/FileWatcher'),
 	  	'github': 		require('./tasks/github'),
 	  	'index': 		require('./tasks/index'),
@@ -15,34 +15,34 @@ const gulp = require('gulp');
 	  	'scripts': 	 	require('./tasks/scripts'),
 	  	'serve': 		require('./tasks/serve'),
 	  	'styles': 		require('./tasks/styles')
-	}
+	},
+
 
 // ============================ [ Options ] ============================ \\
-var Project_name 	= 'DevGulp',
+	Project_name 	= 'DevGulp',
 	pages 			= ['main'],
 
-	// Текущая дирректория для работы
-	start_page 		= pages[0],
+// Текущая дирректория для работы
+	start_page 		= $.pages[0],
 	OpenServer_conn = 'True',
 	port 			= 8282,
-	proxy			= `${Project_name}`;
+	proxy			= `${$.Project_name}`,
 
 // ============================ [ Paths ] ============================ \\
 
+	folders_db = {
+		'src': {
+			
+		},
 
-var folders_db = {
-
-	'src': {
-		
-	},
-
-	'dist': {
-		
+		'dist': {
+			
+		}
 	}
 }
 
-for (var i = 0; i <= pages.length; i++) {
-	folders_db['src'][pages[i]] = {
+for (var i = 0; i < $.pages.length; i++) {
+	$.folders_db['src'][$.pages[i]] = {
 		'html': {
 			'blocks': {
 				'files': [
@@ -100,7 +100,7 @@ for (var i = 0; i <= pages.length; i++) {
 
 	};
 
-	folders_db['dist'][pages[i]] = {
+	$.folders_db['dist'][$.pages[i]] = {
 		//  In future
 	};
 
@@ -116,8 +116,6 @@ function defaultTask(cb) {
 
 
 // ============================ [ Tasks ] ============================ \\
-
-gulp.task('CPF', gulp.series(tasks['CPF'].CreateProjectFiles, defaultTask));
 
 gulp.task('default',
 	gulp.series(

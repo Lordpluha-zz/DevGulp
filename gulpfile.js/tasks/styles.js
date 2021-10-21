@@ -1,22 +1,16 @@
 // Styles
-
-
 // PostCSS (CSS4)
-const gulp = require('gulp'),
-		postcss	= require('gulp-postcss'),	
-	
+const postcss	= require('gulp-postcss'),	
 	// PostCSS plugins in postcss
 
-	
-
 // Source map
-	  srcmap 	= require('gulp-sourcemaps');
+	srcmap 	= require('gulp-sourcemaps');
 	  
 
 // Работа со стилями
 function styles(event) {
 	/*
-	return gulp.src()
+	return $.gulp.src()
 		.pipe( srcmap.init() )
 
 		// PostCSS main processing
@@ -24,11 +18,11 @@ function styles(event) {
 
 		]) )
 
-		// Очистка кеша путей (удаление доп. авто-путей gulp)
+		// Очистка кеша путей (удаление доп. авто-путей $.gulp)
 		.pipe( rname({dirname: ""}) )
 
 		// Выгрузка красивого css
-		.pipe( gulp.dest(`.//`))
+		.pipe( $.gulp.dest(`.//`))
 		
 		// Минификация
 		// PostCSS minification
@@ -39,7 +33,7 @@ function styles(event) {
 		.pipe( srcmap.write(`./`) )
 
 		// Выгрузка минимизированного файла
-		.pipe( gulp.dest(`./`) )
+		.pipe( $.gulp.dest(`./`) )
 		.pipe( browserSync.stream() );
 
 	// del(`./${source_dir}/${start_page}/${styles_dir_name}/${css_dir_name}/styles.css.min.map`);

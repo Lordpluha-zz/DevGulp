@@ -119,8 +119,9 @@ Main target of gulpfile is using automatisation functions, writen on node.js.
 5. ```cd DevGulp```
 6. ```npm i```
 7. ```gulp CPF```
+8. ```gulp```
 
-**Have a good work)**
+**Have a fun)**
 
 Structure
 --------------------------------------------------
@@ -233,18 +234,6 @@ Structure
 
 Functions
 --------------------------------------------------
-
-* ### CPF (CreateProjectFiles)
-
-> This function must goin throught all folder-base and callback all element with fucntion, which creating selected folder in selected depth of architecture
-
-
-
-* ### AddPage
-
-> This function can add page with useless name which you can set in console with current fucntion
-
-
 
 * ### Browser
 
