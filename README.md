@@ -253,6 +253,12 @@ Functions
 
 
 
+* ### Fonts
+
+> This function responsible for uploading fonts to _fonts.css by using file_for_uploading_fonts_to_css.py.
+
+
+
 * ### Scripts
 
 > This function responsible for processing js files and perfectioning them.
@@ -303,6 +309,7 @@ Futures
 * [`gulp-duration`]
 * [`grunt-conventional-changelog`]
 * [`grunt-usebanner`]
+* Html -> Pug
 
 
 

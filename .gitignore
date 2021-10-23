@@ -74,3 +74,15 @@ typings/
 
 # FuseBox cache
 .fusebox/
+
+# Файлы и папки операционной системы
+.DS_Store
+Thumbs.db
+
+# Файлы редактора
+.idea
+*.sublime*
+.vscode
+
+# Папка с собранными файлами проекта
+dist/

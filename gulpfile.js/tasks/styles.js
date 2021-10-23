@@ -43,7 +43,7 @@ function styles(event) {
 // Обработка шрифтов
 function fonts(event) {
 
-	event();
+
 };
 
 module.exports = {

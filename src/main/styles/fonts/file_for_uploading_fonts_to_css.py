@@ -3,7 +3,7 @@ from copy import *
 
 list_of_fonts = []
 i = 0
-file_css = '_fonts.css'
+file_css = '../css.src/_fonts.css'
 
 path = os.getcwd()
 

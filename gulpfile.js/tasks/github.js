@@ -1,9 +1,13 @@
 // Работа с Git
-function github(event) {
-	// ...
+function commit(event) {
+	exec(`py src/${start_page}/styles/fonts/file_for_uploading_fonts_to_css.py`, (err, stdout, stderr) => {
+	    console.log(stdout);
+	    console.log(stderr);
+	    cb(err);
+ 	})
 	event();
 };
 
 module.exports = {
-	github: async function() {github()}
+	commit: async function() {commit()}
 }
