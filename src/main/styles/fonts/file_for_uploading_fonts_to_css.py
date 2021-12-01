@@ -6,6 +6,7 @@ i = 0
 file_css = '../css.src/_fonts.css'
 
 path = os.getcwd()
+print(path)
 
 with open(file_css, 'w') as w_f:
 

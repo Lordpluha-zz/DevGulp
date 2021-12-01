@@ -309,19 +309,25 @@ Futures
 * [`gulp-duration`]
 * [`grunt-conventional-changelog`]
 * [`grunt-usebanner`]
-* Html -> Pug
+* [`husky`]
+* [`Pug`]
+* [`Grunt-js`]
+* [`Bower`]
+* [`psi`]
+* [`ngrok`]
+* [`gulp-plato`]
 
 
 
-[`gulp-changed`]:                 https://github.com/Lordpluha/DevGulp
-[`gulp-newer`]:                   https://github.com/Lordpluha/DevGulp
-[`tmi`]:                          https://github.com/Lordpluha/DevGulp
-[`grunt-phantomas`]:              https://github.com/Lordpluha/DevGulp
-[`grunt-gitbook`]:                https://github.com/Lordpluha/DevGulp
-[`gulp-duration`]:                https://github.com/Lordpluha/DevGulp
-[`grunt-conventional-changelog`]: https://github.com/Lordpluha/DevGulp
-[`grunt-usebanner`]:              https://github.com/Lordpluha/DevGulp
-
+[`gulp-changed`]:                   https://github.com/Lordpluha/DevGulp
+[`gulp-newer`]:                     https://github.com/Lordpluha/DevGulp
+[`tmi`]:                            https://github.com/Lordpluha/DevGulp
+[`grunt-phantomas`]:                https://github.com/Lordpluha/DevGulp
+[`grunt-gitbook`]:                  https://github.com/Lordpluha/DevGulp
+[`gulp-duration`]:                  https://github.com/Lordpluha/DevGulp
+[`grunt-conventional-changelog`]:   https://github.com/Lordpluha/DevGulp
+[`grunt-usebanner`]:                https://github.com/Lordpluha/DevGulp
+[`husky`]:                          https://www.npmjs.com/package/husky
 
 
 Contact with me)
@@ -330,9 +336,6 @@ Contact with me)
 [![Gmail][gmail_ico]][gmail_href] \
 [![Phone][phone_ico]][phone] \
 [![Instagram][instagram_ico]][inst_href]
-
-
-
 
 
 [gmail_ico]: https://raw.githubusercontent.com/Lordpluha/DevGulp/main/gmail_ico.png  

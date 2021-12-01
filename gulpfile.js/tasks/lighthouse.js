@@ -70,3 +70,5 @@ module.exports = async function lighthouse(cb) {
     process.exit(1) //browser-sync API server.exit() do not work
   }
 }
+
+// Тестирование скорости тасков

@@ -13,7 +13,6 @@ async function build() {
 			})
 		    .pipe($.gulp.dest(`./dist/${$.start_page}`) );
 	}
-	
 };
 
 module.exports = {

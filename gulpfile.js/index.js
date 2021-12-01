@@ -4,6 +4,9 @@ global.$ = {};
 // ============================ [ Plugins ] ============================ \\
 global.$.gulp = require('gulp');
 global.$.rname = require('gulp-rename');
+global.$.plumber = require('gulp-plumber');
+// Not connected
+global.$.shell = require('gulp-shell');
 	
 
 
