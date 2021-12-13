@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Lordpluha/DevGulp.git"
   },
-  "author": "Teslyuk Vladislav",
+  "author": "Lordpluha",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Lordpluha/DevGulp/issues"
@@ -39,16 +39,17 @@
     "gulp-shell": "^0.8.0",
     "gulp-sourcemaps": "^3.0.0",
     "lost": "^8.3.1",
-    "postcss": "^8.3.11",
-    "postcss-nested": "^5.0.6",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
     "postcss-preset-env": "^6.7.0",
-    "postcss-sass": "^0.5.0",
     "postcss-scss": "^4.0.2",
     "postcss-sorting": "^7.0.1",
-    "postcss-use": "^3.0.0",
-    "stylefmt": "^6.0.3",
+    "precss": "^4.0.0",
     "stylelint": "^14.0.1",
     "stylelint-config-standard": "^23.0.0",
     "webp-in-css": "^0.6.0"
+  },
+  "dependencies": {
+    "gulp-stylefmt": "^1.1.0"
   }
 }

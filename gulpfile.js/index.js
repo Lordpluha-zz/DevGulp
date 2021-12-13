@@ -7,7 +7,8 @@ global.$.rname = require('gulp-rename');
 global.$.plumber = require('gulp-plumber');
 // Not connected
 global.$.shell = require('gulp-shell');
-	
+global.$.fs  = require('fs');
+
 
 
 // ========================== [ External files ] ========================== \\
@@ -126,6 +127,19 @@ fileWatcher()
 */
 
 // ============================ [ Tasks ] ============================ \\
+
+/* ||||| Testing function ||||| */
+
+$.gulp.task('index', $.tasks['index'].index);
+$.gulp.task('css',   $.tasks['styles'].styles);
+$.gulp.task('js',    $.tasks['scripts'].scripts);
+$.gulp.task('img',   $.tasks['images'].images);
+$.gulp.task('fonts', $.tasks['styles'].fonts);
+$.gulp.task('git',   $.tasks['github'].commit);
+$.gulp.task('FW',    $.tasks['FileWatcher'].fileWatcher);
+
+/* |||||__________________||||| */
+
 
 $.gulp.task('default',
 	$.gulp.series(

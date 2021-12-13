@@ -9,7 +9,7 @@ function index(event) {
 			`!./src/${$.start_page}/html/*.{min.html, html}`,
 			`./src/${$.start_page}/html/*.src.html`
 		])
-		.pipe($.plumber({}))
+		.pipe( $.plumber({}))
 		.pipe( file_include() )
 		
 		.pipe( htmlhint() )

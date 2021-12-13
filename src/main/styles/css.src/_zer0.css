@@ -15,8 +15,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     list-style-type: none;
-    /*@include adaptive-value('font-size', 20, 10, 1);
-    @include adaptive-value('font-size', 30, 20, 2);*/
+    @include adaptive-value('font-size', 20, 10, 1);
+    @include adaptive-value('font-size', 30, 20, 2);
 	font-weight: 100;
 	line-height: 100%;
 }
