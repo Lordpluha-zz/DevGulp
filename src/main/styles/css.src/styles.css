@@ -12,15 +12,19 @@ $ContentMaxWidth: 1004;
 // Минимальная поддерживаемая ширина
 $ContentMinWidth: 320;
 
+@import "./src/main/styles/css.src/_mixins.css";
+
 :root {
 
 }
 
 html {
 	scroll-behavior: smooth;
+	@include adaptive-value('font-size', 20, 10, 1);
+    @include adaptive-value('font-size', 30, 20, 2);
 }
 
-@import "_mixins.css";
+
 @import "_zer0.css";
 
 @import "_fonts.css";

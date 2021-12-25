@@ -12,6 +12,9 @@ $ContentMaxWidth: 1004;
 // Минимальная поддерживаемая ширина
 $ContentMinWidth: 320;
 
+:root {
+}
+
 html {
   scroll-behavior: smooth;
 }

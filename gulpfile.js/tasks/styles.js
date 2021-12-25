@@ -1,77 +1,37 @@
 /* <==================== [Styles] ====================> */
 
-// PostCSS (CSS4)
-const postcss		   = require('gulp-postcss'),
-
-	// PostCSS plugins in postcss
-		// Scss syntax
-	postcss_scss	   = require('postcss-scss'),
-
-		// Completing prefixes with some properties
-	autoprefixer 	   = require('autoprefixer'),
-
-		// PostCSS plugin to keep rules and at-rules content in order.
-	postcss_sorting    = require('postcss-sorting'),
-
-		/* PostCSS Preset Env lets you convert modern CSS into something
-			most browsers can understand, determining the polyfills you need 
-			based on your targeted browsers or runtime environments.
-		*/
-	postcss_preset_env = require('postcss-preset-env'),
-
-	precss 			   = require('precss'),
+// DataBase of plugins
+var plug = require('./vars/StylesVars.js');
 
 
-	// postcss-flexbugs-fixes
-	// postcss-animation
-	// immutable-CSS
-
-	// Complite functions for including webp in css
-	webp_css = require('webp-in-css/plugin'),
-	// Beautifying css
-	stylefmt = require('gulp-stylefmt'),
-	// New modern css grid sytem
-	lost = require('lost'),
-	// Lint CSS for browser support against Can I use database.
-	doiuse = require('doiuse'),
-	/* A mighty, modern linter that helps you avoid errors and
-		enforce conventions in your styles.
-	*/
-	stylelint = require('stylelint')({
-		/* options */
-	}),
-	// Minificator
-	cssnano = require('cssnano'),
-	// Help to complete color palette
-	colorguard = require('colorguard')
-
-// Source map
-	srcmap 		= require('gulp-sourcemaps'),
-	{exec} 		= require('child_process');
-
-// Работа со стилями
 function styles(event) {
 	return $.gulp.src(`./src/${$.start_page}/styles/css.src/styles.css`)
+
+		// Initialization plumber error chech and sourcemap
 		.pipe( $.plumber())
-		.pipe( srcmap.init() )
+		.pipe( plug.srcmap.init() )
 
-		// PostCSS main processing
-		.pipe( postcss([
-			precss(), // Scss syntax
-			postcss_preset_env({
-				stage: 3,
-				features: {
-					'nesting-rules': true
-				},
-				browsers: [
-					"last 5 versions",
-    				"cover 99.5%"
-				],
-				autoprefixer: true,
-			}),
-			// Working: I can`t test)
-			// Setted up: Yes
+		// PostCSS preprocessing
+		.pipe( plug.postcss([
+			plug.postcss_use(),
 
+			plug.postcss_conditionals(),
+			plug.postcss_nested_import(),
+			plug.postcss_sassy_mixins(),
+			
+			
+			plug.precss(), // Scss syntax
+
+		],
+		{
+			syntax: plug.postcss_scss,
+			parser: plug.postcss_scss
+		}
+		))
+
+		// Postprocessing
+		/*
+		.pipe(postcss([
 			postcss_sorting({
 				order: [
 					'dollar-variables',
@@ -118,7 +78,7 @@ function styles(event) {
 					'background-color',
 
 				],
-				'unspecified-properties-position': 'bottom'
+				'unspecified-properties-position': 'bottom',
 			}),
 			// Working: Yes
 			// Setted up: Yes
@@ -133,12 +93,15 @@ function styles(event) {
 			}),
 			// Working: Yes
 			// Setted up: Yes
+		],
+		{
+			syntax: postcss_scss,
+			parser: postcss_scss
+		}
+		))
+		*/
 
-		]) )
-		// webp_css(),
-			
-		// lost(),
-		//
+
 		// doiuse({
 		// 	browsers: [
 		//     	"last 5 versions",
@@ -156,18 +119,20 @@ function styles(event) {
 		// colorguard()
 
 		// PostCSS Beautifying
-		.pipe( stylefmt() )
+		// .pipe( stylefmt() )
 		.pipe( $.gulp.dest(`./src/${$.start_page}/styles/css.dist/`))
 
 		// PostCSS minification
+		/*
 		.pipe( postcss([
-			// cssnano()
+			cssnano()
 		]))
+		*/
 		.pipe($.rname({suffix: '.min'}) )
 		.pipe( $.gulp.dest(`./src/${$.start_page}/styles/css.dist`) )
 
 		// Downloading sourcemap
-		.pipe( srcmap.write(`./`) )
+		.pipe( plug.srcmap.write(`./`) )
 
 		// Stop plumber and streaming new style rules
 		.pipe( $.plumber.stop() )
@@ -177,7 +142,7 @@ function styles(event) {
 // Обработка шрифтов
 function fonts(event) {
 	$.plumber();
-	exec(`py ./src/${$.start_page}/styles/fonts/file_for_uploading_fonts_to_css.py`, (err, stdout, stderr) => {
+	plug.exec(`py ./src/${$.start_page}/styles/fonts/file_for_uploading_fonts_to_css.py`, (err, stdout, stderr) => {
 	    console.log(stdout);
 	    console.log(stderr);
  	});
