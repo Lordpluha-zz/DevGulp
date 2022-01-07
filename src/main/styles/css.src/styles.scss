@@ -12,33 +12,23 @@ $ContentMaxWidth: 1004;
 // Минимальная поддерживаемая ширина
 $ContentMinWidth: 320;
 
-@import "./src/main/styles/css.src/_mixins.css";
+@import "_mixins.scss";
+@import "_zer0.scss";
+@import "_fonts.scss";
+@import "_media.scss";
+@import "_preloader.scss";
 
-:root {
-
-}
+@import "_header.scss";
+@import "_nav.scss";
+@import "_article.scss";
+@import "_aside.scss";
+@import "_footer.scss";
 
 html {
-	scroll-behavior: smooth;
 	@include adaptive-value('font-size', 20, 10, 1);
     @include adaptive-value('font-size', 30, 20, 2);
+    scroll-behavior: smooth;
 }
-
-
-@import "_zer0.css";
-
-@import "_fonts.css";
-
-@import "_media.css";
-@import "_preloader.css";
-
-@import "_header.css";
-@import "_nav.css";
-@import "_article.css";
-@import "_aside.css";
-@import "_footer.css";
-
-
 
 * {
 	margin: 0;

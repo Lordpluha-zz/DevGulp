@@ -4,7 +4,11 @@
   "description": "Создание нового gulpfile на основе современных тендеций front-end dev(postcss ...)",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "npx npm-force-resolutions",
+    "test": "npm audit && echo \"Test success!\""
+  },
+  "resolutions": {
+    "glob-parent": "^6.0.1"
   },
   "repository": {
     "type": "git",
@@ -17,18 +21,18 @@
   },
   "browserslist": [
     "last 5 versions",
-    "cover 99.5%"
+    "> 1%"
   ],
   "homepage": "https://github.com/Lordpluha/DevGulp#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "browser-sync": "^2.27.5",
-    "colorguard": "^1.2.1",
     "cssnano": "^5.0.8",
     "del": "^6.0.0",
     "doiuse": "^4.4.1",
     "fs": "0.0.1-security",
     "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
     "gulp-file-include": "^2.3.0",
     "gulp-html-bem-validator": "^1.0.5",
     "gulp-htmlhint": "^4.0.1",
@@ -36,25 +40,23 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
     "gulp-shell": "^0.8.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "lost": "^8.3.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "lodash": "^4.17.21",
+    "lodash.template": "^4.5.0",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
-    "postcss-conditionals": "^2.1.0",
-    "postcss-extend-rule": "^3.0.0",
-    "postcss-nested-import": "^0.1.0",
-    "postcss-preset-env": "^6.7.0",
-    "postcss-sassy-mixins": "^2.1.0",
+    "postcss-nesting": "^10.1.1",
     "postcss-scss": "^4.0.2",
     "postcss-sorting": "^7.0.1",
-    "postcss-use": "^3.0.0",
-    "precss": "^4.0.0",
-    "stylelint": "^14.0.1",
-    "stylelint-config-standard": "^23.0.0",
-    "webp-in-css": "^0.6.0"
+    "sass": "^1.46.0",
+    "strip-ansi": "^7.0.1",
+    "webp-in-css": "^0.7.0"
   },
   "dependencies": {
-    "gulp-stylefmt": "^1.1.0"
+    "ansi-regex": "^6.0.1",
+    "debug": "^3.1.0",
+    "npm": "^8.3.0"
   }
 }

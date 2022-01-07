@@ -2,37 +2,39 @@
 
 // DataBase of plugins
 var plug = require('./vars/StylesVars.js');
+var path = require('path');
 
-
+// Styles processing
 function styles(event) {
-	return $.gulp.src(`./src/${$.start_page}/styles/css.src/styles.css`)
+	return $.gulp.src(`./src/${$.start_page}/styles/css.src/styles.scss`)
 
 		// Initialization plumber error chech and sourcemap
 		.pipe( $.plumber())
 		.pipe( plug.srcmap.init() )
+		
+		// SCSS
+		.pipe( plug.scss() )
 
-		// PostCSS preprocessing
+		// PostCSS pre/post processing
 		.pipe( plug.postcss([
-			plug.postcss_use(),
-
-			plug.postcss_conditionals(),
-			plug.postcss_nested_import(),
-			plug.postcss_sassy_mixins(),
+			// Preprocessing
 			
-			
-			plug.precss(), // Scss syntax
 
-		],
-		{
-			syntax: plug.postcss_scss,
-			parser: plug.postcss_scss
-		}
-		))
 
-		// Postprocessing
-		/*
-		.pipe(postcss([
-			postcss_sorting({
+
+			// Postprocessing
+			plug.autoprefixer({
+				grid: "autoplace",
+				cascade: true,
+				remove: true,
+				add: true,
+				supports: true,
+				flexbox: true,
+				"overrideBrowserslist": ["last 5 versions", " > 1%"]
+			}),
+			// Working: Yes
+			// Setted up: Yes
+			plug.postcss_sorting({
 				order: [
 					'dollar-variables',
 					'at-variables',
@@ -46,6 +48,11 @@ function styles(event) {
 					'position',
 					'display',
 					'z-index',
+
+					'width',
+					'max-width',
+					'height',
+					'max-height',
 
 					'top',
 					'bottom',
@@ -71,64 +78,76 @@ function styles(event) {
 					'border-left',
 					'border-right',
 
+					'outline',
+
 					'background',
-					'background-size',
-					'background-position',
 					'background-image',
 					'background-color',
+					'background-size',
+					'background-position',
+					'background-repeat',
 
+					'font-family',
+					'font-style',
+					'font-size',
+					'font-weight',
+
+					'color',
+
+					'line-height',
+					'list-style-type',
+
+					"text-decoration",
+
+					'user-select',
+
+					'scroll-behavior,'
 				],
 				'unspecified-properties-position': 'bottom',
 			}),
 			// Working: Yes
 			// Setted up: Yes
 
-			autoprefixer({
-				grid: "autoplace",
-				cascade: true,
-				remove: true,
-				add: true,
-				supports: true,
-				flexbox: true,
-			}),
+		], {
+			syntax: plug.postcss_scss
+		}))
+
+		// Linting
+		// .pipe()
+
+		// Analyse
+		.pipe( plug.postcss([
+			plug.doiuse({
+				browsers:[
+					"last 5 versions",
+    				"> 1%"
+				],
+				ignore: [
+					// 'css3-boxsizing',
+					// 'outline',
+					// 'css-mediaqueries',
+					// 'background-img-opts',
+					// 'user-select-none',
+					// 'viewport-units',
+					// 'object-fit',
+					// 'calc'
+				]
+			})
 			// Working: Yes
-			// Setted up: Yes
-		],
-		{
-			syntax: postcss_scss,
-			parser: postcss_scss
-		}
-		))
-		*/
+			// Setted up: No
+		], {
 
+		}))
 
-		// doiuse({
-		// 	browsers: [
-		//     	"last 5 versions",
-    	// 		"cover 99.5%"
-		//     ],
-		// 	ignore: ['rem'], // an optional array of features to ignore
-		// 	// ignoreFiles: ['**/normalize.css'], // an optional array of file globs to match against original source file path, to ignore
-		// 	onFeatureUsage: function (usageInfo) {console.log(usageInfo.message)}
-		// }),
-		// require("stylelint")({
-		// 	/* your options */
-		// }),
-		// require("postcss-reporter")({ clearReportedMessages: true }),
-		// 
-		// colorguard()
-
-		// PostCSS Beautifying
-		// .pipe( stylefmt() )
+		// Beautifying
+		// .pipe()
+		
 		.pipe( $.gulp.dest(`./src/${$.start_page}/styles/css.dist/`))
+		
+		// Minification
+		// .pipe()
 
-		// PostCSS minification
-		/*
-		.pipe( postcss([
-			cssnano()
-		]))
-		*/
-		.pipe($.rname({suffix: '.min'}) )
+		.pipe( $.rname({suffix: '.min'}) )
 		.pipe( $.gulp.dest(`./src/${$.start_page}/styles/css.dist`) )
 
 		// Downloading sourcemap
@@ -137,9 +156,9 @@ function styles(event) {
 		// Stop plumber and streaming new style rules
 		.pipe( $.plumber.stop() )
 		.pipe( $.browserSync.stream() );
-};
+}
 
-// Обработка шрифтов
+// Обработка шрифтов !!!
 function fonts(event) {
 	$.plumber();
 	plug.exec(`py ./src/${$.start_page}/styles/fonts/file_for_uploading_fonts_to_css.py`, (err, stdout, stderr) => {

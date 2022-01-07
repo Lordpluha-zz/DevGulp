@@ -1,41 +1,122 @@
-@charset 'utf-8';
-
-// Размер макета
-$MaketWidth: 1366;
-
-// Максимальный поддерживаемый размер сайта
-$SiteMaxWidth: 2560;
-
-// Максимальная ширина контентного блока
-$ContentMaxWidth: 1004;
-
-// Минимальная поддерживаемая ширина
-$ContentMinWidth: 320;
-
-:root {
-}
-
-html {
-  scroll-behavior: smooth;
-}
-@import "_mixins.css";
-@import "_zer0.css";
-@import "_fonts.css";
-@import "_media.css";
-@import "_preloader.css";
-@import "_header.css";
-@import "_nav.css";
-@import "_article.css";
-@import "_aside.css";
-@import "_footer.css";
-
+@charset "UTF-8";
 * {
-  margin: 0;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
   box-sizing: border-box;
-  position: relative;
-
-  &.bg_c {
-    background-color: #fff;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  /* not supported by: IE (7,8)
+   	and only partially supported by: Opera Mini (all)
+  */
+  background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fklike.net%2F2997-kartinki-patrika-15-foto.html&psig=AOvVaw0w6NBTt1wu3qQIKDscBcAH&ust=1641637893204000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOC7su-3n_UCFQAAAAAdAAAAABAD);
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 100%;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+@media (max-width: 1004px) {
+  * {
+    font-size: calc(10px + 10 * ((100vw - 320px) / 684));
+  }
+}
+@media (min-width: 1004px) {
+  * {
+    font-size: calc(20px + 10 * ((100vw - 320px) / 2240));
   }
 }
 
+a, button, input, textarea, form {
+  border: 1px solid #000;
+  color: #000;
+  text-decoration: none;
+  /*&:hover {
+  	cursor: pointer;
+  }*/
+}
+
+span {
+  font-size: 100%;
+}
+
+img {
+  /* Не поддерживаеться Internet Explorer*/
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/** <-------------------------------- [ Big screens ] --------------------------------> **/
+@media only screen and (min-width: 1824px) {
+  /* стили */
+}
+/** <--------------------------- [ Computers and laptops ] ---------------------------> **/
+@media only screen and (min-width: 1280px) {
+  /* стили */
+}
+/** <-------------------------------- [ Plane tables ] --------------------------------> **/
+/* Планшеты (вертикальная и горизонтальная) ----------- */
+@media only screen and (max-width: 1075px) and (min-width: 768px) {
+  /* стили */
+}
+/* Планшеты (горизонтальная) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* стили */
+}
+/* Планшеты (вертикальная) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* стили */
+}
+/** <-------------------------------- [ Smartphones ] <--------------------------------> **/
+/* Smartphones (вертикальная и горизонтальная) ----------- */
+@media only screen and (min-width: 320px) and (max-width: 736px) {
+  /* стили */
+}
+/* Smartphones (горизонтальная) ----------- */
+@media only screen and (min-width: 320px) and (max-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* стили */
+}
+/* Smartphones (вертикальная) ----------- */
+@media only screen and (min-width: 320px) and (max-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* стили */
+}
+/** <------------------------------ [ Little smartphones] ------------------------------> **/
+@media only screen and (max-width: 768px) {
+  /* стили */
+}
+html {
+  font-size: 20px;
+  font-size: 30px;
+  scroll-behavior: smooth;
+}
+@media (max-width: 1004px) {
+  html {
+    font-size: calc(10px + 10 * ((100vw - 320px) / 684));
+  }
+}
+@media (min-width: 1004px) {
+  html {
+    font-size: calc(20px + 10 * ((100vw - 320px) / 2240));
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  margin: 0;
+}
+*.bg_c {
+  background-color: #fff;
+}

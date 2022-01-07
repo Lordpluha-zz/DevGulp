@@ -2,17 +2,17 @@
 global.$ = {};
 
 // ============================ [ Plugins ] ============================ \\
-global.$.gulp = require('gulp');
-global.$.rname = require('gulp-rename');
-global.$.plumber = require('gulp-plumber');
+$.gulp = require('gulp');
+$.rname = require('gulp-rename');
+$.plumber = require('gulp-plumber');
 // Not connected
-global.$.shell = require('gulp-shell');
-global.$.fs  = require('fs');
+$.shell = require('gulp-shell');
+// $.fs  = require('fs');
 
 
 
 // ========================== [ External files ] ========================== \\
-global.$.tasks = {
+$.tasks = {
 	'index': 		require('./tasks/index'),
 	'styles': 		require('./tasks/styles'),
 	'scripts': 	 	require('./tasks/scripts'),
@@ -29,16 +29,16 @@ global.$.tasks = {
 };
 
 // ============================ [ Options ] ============================ \\
-global.$.Project_name = 	'DevGulp';
-global.$.pages = 			['main'];
-global.$.start_page = 		$.pages;
-global.$.OpenServer_conn = 	'False';
-global.$.port = 			8282;
-global.$.proxy = 			$.Project_name;
+$.Project_name = 	'DevGulp';
+$.pages = 			['main'];
+$.start_page = 		$.pages[0];
+$.OpenServer_conn = 'False';
+$.port = 			8282;
+$.proxy = 			$.Project_name;
 
 // ============================ [ Paths ] ============================ \\
 
-global.$.folders_db = {
+$.folders_db = {
 		'src': {
 			
 		},
