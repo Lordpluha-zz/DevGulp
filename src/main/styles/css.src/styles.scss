@@ -1,4 +1,5 @@
 @charset 'UTF-8';
+@use "sass:math";
 
 // Размер макета
 $MaketWidth: 1366;
@@ -18,26 +19,60 @@ $ContentMinWidth: 320;
 @import "_media.scss";
 @import "_preloader.scss";
 
+#wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#content {
+	display: block;
+	margin: 0 auto;
+	max-width: $ContentMaxWidth+px;
+	@include adaptive-value('padding', 20, 0, 1);
+}
+
+$AnimTime: 1s;
+$AnimDelay: 0s;
+
+._animElem {
+	-webkit-transition: margin, padding .0s linear;
+	   -moz-transition: margin, padding .0s linear;
+	    -ms-transition: margin, padding .0s linear;
+	     -o-transition: margin, padding .0s linear;
+	        transition: margin, padding .0s linear;
+
+	-webkit-transform: translate(0, -100%);
+	   -moz-transform: translate(0, -100%);
+		-ms-transform: translate(0, -100%);
+		 -o-transform: translate(0, -100%);
+			transform: translate(0, -100%);
+	
+	opacity: 0;
+
+	-webkit-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+						transform $AnimTime ease-in-out $AnimDelay;
+	   -moz-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+	   					transform $AnimTime ease-in-out $AnimDelay;
+	    -ms-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+	    				transform $AnimTime ease-in-out $AnimDelay;
+	     -o-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+	     				transform $AnimTime ease-in-out $AnimDelay;
+	        transition: opacity   $AnimTime ease-in-out $AnimDelay,
+	        			transform $AnimTime ease-in-out $AnimDelay;
+
+	&._active__fx {
+		transform: translate(0px, 0px);
+		opacity: 1;
+	}
+}
+
 @import "_header.scss";
 @import "_nav.scss";
 @import "_article.scss";
 @import "_aside.scss";
 @import "_footer.scss";
 
-html {
-	@include adaptive-value('font-size', 20, 10, 1);
-    @include adaptive-value('font-size', 30, 20, 2);
-    scroll-behavior: smooth;
-}
 
-* {
-	margin: 0;
-	box-sizing: border-box;
-	position: relative;
-
-	&.bg_c {
-		background-color: #fff;
-	}
-	
-}
 

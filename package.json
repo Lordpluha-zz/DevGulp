@@ -1,11 +1,13 @@
 {
   "name": "devgulp",
   "version": "1.0.0",
-  "description": "Создание нового gulpfile на основе современных тендеций front-end dev(postcss ...)",
+  "description": "Создание нового gulpfile на основе современных тендеций в WebDev",
   "main": "gulpfile.js",
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
-    "test": "npm audit && echo \"Test success!\""
+    "test": "npm audit && echo \"Test success!\"",
+    "start": "gulp",
+    "build": "gulp build"
   },
   "resolutions": {
     "glob-parent": "^6.0.1"
@@ -25,9 +27,12 @@
   ],
   "homepage": "https://github.com/Lordpluha/DevGulp#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
+    "ansi-regex": "^6.0.1",
+    "autoprefixer": "^10.4.2",
     "browser-sync": "^2.27.5",
-    "cssnano": "^5.0.8",
+    "cssnano": "^5.0.15",
+    "cssnano-preset-advanced": "^5.1.10",
+    "debug": "^4.3.3",
     "del": "^6.0.0",
     "doiuse": "^4.4.1",
     "fs": "0.0.1-security",
@@ -45,18 +50,18 @@
     "gulp-sourcemaps": "^2.6.5",
     "lodash": "^4.17.21",
     "lodash.template": "^4.5.0",
+    "npm": "^8.3.0",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
-    "postcss-nesting": "^10.1.1",
-    "postcss-scss": "^4.0.2",
+    "postcss-nesting": "^10.1.2",
+    "postcss-scss": "^4.0.3",
     "postcss-sorting": "^7.0.1",
-    "sass": "^1.46.0",
+    "sass": "^1.47.0",
+    "string-width": "^5.1.0",
     "strip-ansi": "^7.0.1",
+    "stylelint": "^14.2.0",
+    "stylelint-config-standard": "^24.0.0",
+    "sugarss": "^4.0.1",
     "webp-in-css": "^0.7.0"
-  },
-  "dependencies": {
-    "ansi-regex": "^6.0.1",
-    "debug": "^3.1.0",
-    "npm": "^8.3.0"
   }
 }

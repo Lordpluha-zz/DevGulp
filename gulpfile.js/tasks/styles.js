@@ -13,12 +13,12 @@ function styles(event) {
 		.pipe( plug.srcmap.init() )
 		
 		// SCSS
-		.pipe( plug.scss() )
+		.pipe( plug.scss().on('error', plug.scss.logError) )
 
 		// PostCSS pre/post processing
 		.pipe( plug.postcss([
 			// Preprocessing
-			
+
 
 
 
@@ -30,7 +30,10 @@ function styles(event) {
 				add: true,
 				supports: true,
 				flexbox: true,
-				"overrideBrowserslist": ["last 5 versions", " > 1%"]
+				"overrideBrowserslist": [
+					"last 5 versions",
+					" >= 1%"
+				]
 			}),
 			// Working: Yes
 			// Setted up: Yes
@@ -113,7 +116,11 @@ function styles(event) {
 		}))
 
 		// Linting
-		// .pipe()
+		.pipe( plug.postcss([
+			plug.stylelint({
+				
+			}) 
+		]))
 
 		// Analyse
 		.pipe( plug.postcss([
@@ -139,13 +146,26 @@ function styles(event) {
 
 		}))
 
-		// Beautifying
+		// Beautiffying
 		// .pipe()
 		
 		.pipe( $.gulp.dest(`./src/${$.start_page}/styles/css.dist/`))
 		
 		// Minification
-		// .pipe()
+		.pipe( plug.postcss([
+			plug.cssnano({
+				"preset": ['cssnano-preset-advanced', {
+					"cssDeclarationSorter": false,
+					"discardOverridden": false,
+					"discardUnused": false,
+					"mergeIdents": false,
+					"mergeLonghand": false,
+					"normalizeTimingFunctions": false,
+					"reduceInitial": false,
+					"uniqueSelectors": false,
+				}]
+			})
+		]) )
 
 		.pipe( $.rname({suffix: '.min'}) )
 		.pipe( $.gulp.dest(`./src/${$.start_page}/styles/css.dist`) )
@@ -161,10 +181,12 @@ function styles(event) {
 // Обработка шрифтов !!!
 function fonts(event) {
 	$.plumber();
-	plug.exec(`py ./src/${$.start_page}/styles/fonts/file_for_uploading_fonts_to_css.py`, (err, stdout, stderr) => {
-	    console.log(stdout);
-	    console.log(stderr);
- 	});
+	plug.exec(`py ./src/${$.start_page}/styles/fonts/file_for_uploading_fonts_to_css.py`,
+		(err, stdout, stderr) => {
+	    	console.log(stdout);
+	    	console.log(stderr);
+ 		}
+ 	);
  	// exec(`cd .../.../.../...`);
  	$.plumber.stop();
 };

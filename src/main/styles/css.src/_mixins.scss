@@ -7,7 +7,7 @@
 
 		// Когда размер страницы меньше контентного блока (узкие Планшеты и телефоны)
 		@media (max-width: #{$ContentMaxWidth + px}) {
-
+			
 			// Свойство = МинВелич + ДобавРазмер * Отступы_от_Content / Максимальное_изменение_Content
 			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$ContentMinWidth+px}) / #{$ContentMaxWidth - $ContentMinWidth}));
 		}
@@ -37,4 +37,8 @@
 
 		$AnimDelayV: $AnimDelayV+$DelayCoof;
 	}
+}
+
+@mixin _bgi () {
+
 }

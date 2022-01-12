@@ -16,6 +16,9 @@ const scss 					= require('gulp-sass')(require('sass')),
 
 	/* <+++++++++++++++ [Linting] +++++++++++++++> */
 
+		// Main Linter
+		stylelint 				= require('stylelint'),
+
 		// Analyse supporting
 		doiuse 					= require('doiuse'),
 
@@ -59,6 +62,7 @@ module.exports = {
 	scss,
 	postcss,
 	postcss_scss,
+	stylelint,
 	doiuse,
 	autoprefixer,
 	postcss_sorting,

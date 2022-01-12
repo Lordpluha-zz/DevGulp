@@ -86,3 +86,5 @@ Thumbs.db
 
 # Папка с собранными файлами проекта
 dist/
+package-lock.json
+*.zip
