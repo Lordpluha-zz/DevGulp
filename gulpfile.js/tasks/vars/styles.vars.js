@@ -1,26 +1,30 @@
 /* <<<---------- [PLUGINS for '../styles.js'] ---------->>>> */
 
 // SCSS
-const scss 					= require('gulp-sass')(require('sass')),
+const scss 							= require('gulp-sass')(require('sass')),
 // PostCSS (CSS4)
-	postcss		   			= require('gulp-postcss'),
+	postcss		   					= require('gulp-postcss'),
 	
 /* ___________________ --- | PostCSS plugins | --- ___________________ */
 	
 	// Scss syntax
-	postcss_scss	   			= require('postcss-scss'),
+	postcss_scss	   				= require('postcss-scss'),
 	
 	/* <+++++++++++++++ [Preprocessing] +++++++++++++++> */
 
-		// ...
+		// Complite functions for including webp in css
+		webp_css 					= require('webp-in-css/plugin'),
+
+		// Auto convert px -> rem
+		pxtorem 					=  require('postcss-pxtorem')
 
 	/* <+++++++++++++++ [Linting] +++++++++++++++> */
 
 		// Main Linter
-		stylelint 				= require('stylelint'),
+		stylelint 					= require('stylelint'),
 
 		// Analyse supporting
-		doiuse 					= require('doiuse'),
+		doiuse 						= require('doiuse'),
 
 	/* <+++++++++++++++ [Additional functions] +++++++++++++++> */
 	
@@ -37,37 +41,47 @@ const scss 					= require('gulp-sass')(require('sass')),
 
 		// Minificator
 		cssnano	 					= require('cssnano'),
-	
-		// immutable-CSS
 
+		// Browser reporter
+		browser_reporter 			= require('postcss-browser-reporter'),
+
+		// immutable-CSS
 
 
 /*___________________________________________________________________*/
 
   /*                                                     */
  /*  < -------------- [Side functions] -------------- > */
-/*                                                     */
-
-	// Complite functions for including webp in css
-	webp_css 									= require('webp-in-css/plugin'),
-
+/*        	                                             */
+	
+	// Beautifier
+	cleanCSS 						= require('gulp-clean-css'),
 	// Source map
-	srcmap 										= require('gulp-sourcemaps'),
+	srcmap 							= require('gulp-sourcemaps'),
 	
 	// Execution CMD commands
-	{exec} 										= require('child_process');
+	{exec} 							= require('child_process');
 
 
 module.exports = {
 	scss,
 	postcss,
 	postcss_scss,
-	stylelint,
-	doiuse,
+
+	webp_css,
+	pxtorem,
+
 	autoprefixer,
 	postcss_sorting,
+
+	stylelint,
+	doiuse,
+
+	cleanCSS,
+	// css_beautify,
 	cssnano,
-	webp_css,
+	
+	browser_reporter,
 	srcmap,
 	exec,
 }

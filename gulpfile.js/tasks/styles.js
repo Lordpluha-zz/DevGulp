@@ -1,13 +1,19 @@
 /* <==================== [Styles] ====================> */
 
-// DataBase of plugins
-var plug = require('./vars/StylesVars.js');
-var path = require('path');
+// DataBase of plugins and configs
+const plug 					= require('./vars/styles.vars.js'),
+	  path 					= require('path'),
+	  
+	  autoprefxr_conf 		= require('./configs/styles.js/autoprefixer.config.js'),
+	  sorting_conf 			= require('./configs/styles.js/postcss-sorting.config.js'),
+	  doiuse_conf 			= require('./configs/styles.js/doiuse.config.js'),
+	  browser_rep_config 	= require('./configs/styles.js/postcss-browser-reporter.config.js'),
+	  cleanCSS_conf 		= require('./configs/styles.js/gulp-clean-css.config.js'),
+	  cssnano_conf 			= require('./configs/styles.js/cssnano.config.js');
 
 // Styles processing
 function styles(event) {
 	return $.gulp.src(`./src/${$.start_page}/styles/css.src/styles.scss`)
-
 		// Initialization plumber error chech and sourcemap
 		.pipe( $.plumber())
 		.pipe( plug.srcmap.init() )
@@ -17,178 +23,87 @@ function styles(event) {
 
 		// PostCSS pre/post processing
 		.pipe( plug.postcss([
-			// Preprocessing
+			// Preprocessing //
+			plug.webp_css(),
+
+			// Optional //
+
+			// plug.pxtorem(),
 
 
 
-
-			// Postprocessing
-			plug.autoprefixer({
-				grid: "autoplace",
-				cascade: true,
-				remove: true,
-				add: true,
-				supports: true,
-				flexbox: true,
-				"overrideBrowserslist": [
-					"last 5 versions",
-					" >= 1%"
-				]
-			}),
-			// Working: Yes
-			// Setted up: Yes
-			plug.postcss_sorting({
-				order: [
-					'dollar-variables',
-					'at-variables',
-					'declarations',
-					'custom-properties',
-					'rules',
-					'at-rules'
-				],
-				'properties-order': [
-					'box-sizing',
-					'position',
-					'display',
-					'z-index',
-
-					'width',
-					'max-width',
-					'height',
-					'max-height',
-
-					'top',
-					'bottom',
-					'left',
-					'right',
-
-					'margin',
-					'margin-top',
-					'margin-bottom',
-					'margin-left',
-					'margin-right',
-
-					'padding',
-					'padding-top',
-					'padding-bottom',
-					'padding-left',
-					'padding-right',
-
-					'border',
-					'border-radius',
-					'border-top',
-					'border-bottom',
-					'border-left',
-					'border-right',
-
-					'outline',
-
-					'background',
-					'background-image',
-					'background-color',
-					'background-size',
-					'background-position',
-					'background-repeat',
-
-					'font-family',
-					'font-style',
-					'font-size',
-					'font-weight',
-
-					'color',
-
-					'line-height',
-					'list-style-type',
-
-					"text-decoration",
-
-					'user-select',
-
-					'scroll-behavior,'
-				],
-				'unspecified-properties-position': 'bottom',
-			}),
+			// Postprocessing //
+			plug.autoprefixer(autoprefxr_conf),
 			// Working: Yes
 			// Setted up: Yes
 
-		], {
-			syntax: plug.postcss_scss
-		}))
+			plug.postcss_sorting(sorting_conf),
+			// Working: Yes
+			// Setted up: Yes
 
-		// Linting
-		.pipe( plug.postcss([
-			plug.stylelint({
-				
-			}) 
-		]))
 
-		// Analyse
-		.pipe( plug.postcss([
-			plug.doiuse({
-				browsers:[
-					"last 5 versions",
-    				"> 1%"
-				],
-				ignore: [
-					// 'css3-boxsizing',
-					// 'outline',
-					// 'css-mediaqueries',
-					// 'background-img-opts',
-					// 'user-select-none',
-					// 'viewport-units',
-					// 'object-fit',
-					// 'calc'
-				]
-			})
+
+			// Linting //
+			plug.stylelint(),
+
+			// Analyse //
+			plug.doiuse(doiuse_conf),
 			// Working: Yes
 			// Setted up: No
-		], {
 
+
+
+			// Browser report //
+			plug.browser_reporter(browser_rep_config)
+
+		], {
+			syntax: plug.postcss_scss,
 		}))
 
+
+
 		// Beautiffying
-		// .pipe()
-		
+		.pipe( plug.cleanCSS(cleanCSS_conf, (details) => {
+			console.log(`• ${details.name} [Log] Default size: ${details.stats.originalSize} bytes`);
+			console.log(`• ${details.name} [Log] After cleanCSS: ${details.stats.minifiedSize} bytes`);
+		}))
 		.pipe( $.gulp.dest(`./src/${$.start_page}/styles/css.dist/`))
 		
+
+
 		// Minification
 		.pipe( plug.postcss([
-			plug.cssnano({
-				"preset": ['cssnano-preset-advanced', {
-					"cssDeclarationSorter": false,
-					"discardOverridden": false,
-					"discardUnused": false,
-					"mergeIdents": false,
-					"mergeLonghand": false,
-					"normalizeTimingFunctions": false,
-					"reduceInitial": false,
-					"uniqueSelectors": false,
-				}]
-			})
-		]) )
+			plug.cssnano(cssnano_conf),
 
+			// // Browser report
+			plug.browser_reporter()
+		]) )
 		.pipe( $.rname({suffix: '.min'}) )
 		.pipe( $.gulp.dest(`./src/${$.start_page}/styles/css.dist`) )
+		
+
 
 		// Downloading sourcemap
 		.pipe( plug.srcmap.write(`./`) )
-
 		// Stop plumber and streaming new style rules
 		.pipe( $.plumber.stop() )
+		// .pipe( $.browserSync.stream({match: `./src/${$.start_page}/styles/css.dist*.{css, map}`}) )
 		.pipe( $.browserSync.stream() );
 }
 
 // Обработка шрифтов !!!
 function fonts(event) {
-	$.plumber();
-	plug.exec(`py ./src/${$.start_page}/styles/fonts/file_for_uploading_fonts_to_css.py`,
+	plug.exec(`py ./gulpfile.js/file_for_uploading_fonts_to_scss.py`,
 		(err, stdout, stderr) => {
-	    	console.log(stdout);
-	    	console.log(stderr);
- 		}
- 	);
- 	// exec(`cd .../.../.../...`);
- 	$.plumber.stop();
+			if (err) {
+				console.log(err);
+			}
+			if (stdout!='' || stderr!='') {
+				console.log(stdout);
+				console.log(stderr);	
+			}
+		}
+	);
 };
 
 module.exports = {

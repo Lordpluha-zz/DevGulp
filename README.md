@@ -1,5 +1,7 @@
-DevGulp Project   created by Lordpluha)
+DevGulp Project
 ============================================================================
+
+###### created by Lordpluha)
 
 ### Main targets of a project
 > Realization gulp-building and processing based on new modern tendation of front-end and back-end dev([`gulp-postcss`], [`gulp-sass`]).
@@ -11,13 +13,13 @@ Using
 
 Main target of gulpfile is using automatisation functions for web-dev, written on node.js.
 
-> You might have to installed ** *Node.js* ** and *git in you terminal* **!!!**
+> You might have to installed **Node.js** and **git** *in you terminal* !!!
 
-1. *** Open your terminal in directory which you want and then copy next ***
+1.  Open your terminal **in directory which** you want and then copy next *
 2. ```git clone https://github.com/Lordpluha/DevGulp.git```
-3. *** Rename your project in **package.json** ***
-4. ```npm i```
-5. ```npm start```
+3. *Rename your project* in **package.json**
+4. ```npm i``` to install all project depencies
+5. ```npm start``` / ```gulp```
 
 **Have a fun)**
 
@@ -33,55 +35,55 @@ Structure
 Functions
 --------------------------------------------------
 
-* ### Browser
+- ### Browser
 
-> This function must be responsible for **local server** of a page and injection file in project *on the fly*.
-
-
-
-* ### Index
-
-> This function responsible for processing html ([``], [``], [``]) and php ([``], [``], [``]) files and calling reload of a page when they are changed.
+> This function must be responsible for **local server** of a page and injection file in project **on the fly**.
 
 
 
-* ### Styles
+- ### Index
+
+> This function responsible for processing html and php files and calling reload of a page when they are changed.
+
+
+
+- ### Styles
 
 > This function responsible for processing css files and perfectioning them.
 
 
 
-* ### Fonts
+- ### Fonts
 
 > This function responsible for uploading fonts to _fonts.css by using file_for_uploading_fonts_to_css.py.
 
 
 
-* ### Scripts
+- ### Scripts
 
 > This function responsible for processing js files and perfectioning them.
 
 
 
-* ### Img
+- ### Img
 
 > This function responsible for processing images.
 
 
 
-* ### FileWatcher
+- ### FileWatcher
 
 > This function responsible for watching files (html, php, js, json, css )
 
 
 
-* ### Build
+- ### Build
 
 > This function must build project from src dir to dist dir.
 
 
 
-* ### GitHub
+- ### GitHub
 
 > ...
 
@@ -101,10 +103,10 @@ Tasks
 Plugins
 --------------------------------------------------
 
-### SCSS processing
-* [`gulp-sass`]
-* [`gulp-postcss`]
-* [`postcss-scss`]
+### Styles processing
+- [`gulp-sass`]
+- [`gulp-postcss`]
+- [`postcss-scss`]
 
 <!-- #### Solve Global CSS Problem
 * [`postcss-use`] allows you to explicitly set PostCSS plugins within CSS and execute them only for the current file.
@@ -115,13 +117,13 @@ Plugins
 
 
 #### Use Future CSS, Today
-* [`autoprefixer`] adds vendor prefixes, using data from Can I Use.
+- [`autoprefixer`] adds vendor prefixes, using data from Can I Use.
 <!-- * [`postcss-preset-env`] allows you to use future CSS features today. -->
 
 
 #### Better CSS Readability
 <!-- * [`postcss-nested`] unwraps nested rules the way Sass does. -->
-* [`postcss-sorting`] sorts the content of rules and at-rules.
+- [`postcss-sorting`] sorts the content of rules and at-rules.
 <!-- * [`postcss-utilities`] includes the most commonly used shortcuts and helpers.
 * [`short`] adds and extends numerous shorthand properties. -->
 
@@ -132,30 +134,31 @@ Plugins
 * [`font-magician`] generates all the `@font-face` rules needed in CSS.
 * [`postcss-inline-svg`] allows you to inline SVG and customize its styles.
 * [`postcss-write-svg`] allows you to write simple SVG directly in your CSS. -->
-* [`webp-in-css`] to use WebP image format in CSS background.
+- [`webp-in-css`] to use WebP image format in CSS background.
 <!-- * [`avif-in-css`] to use AVIF image format in CSS background. -->
 
 
 #### Linters
-* [`stylelint`] is a modular stylesheet linter.
+- [`stylelint`] is a modular stylesheet linter.
 <!-- * [`stylefmt`] is a tool that automatically formats CSS
   according `stylelint` rules. -->
-* [`doiuse`] lints CSS for browser support, using data from Can I Use.
+- [`doiuse`] lints CSS for browser support, using data from Can I Use.
 <!-- * [`colorguard`] helps you maintain a consistent color palette. -->
 
 
 #### Other
 <!-- * [`postcss-rtl`] combines both-directional (left-to-right and right-to-left) styles in one CSS file. -->
-* [`cssnano`] is a modular CSS minifier.
+- [`cssnano`] is a modular CSS minifier.
 <!-- * [`lost`] is a feature-rich `calc()` grid system.
 * [`rtlcss`] mirrors styles for right-to-left locales.
  -->
-* [`gulp-sourcemaps`] serves for more easier see into css dev
+- [`gulp-sourcemaps`] serves for more easier see into css dev
 
 
 
 [`gulp-sass`]:                  https://www.npmjs.com/package/gulp-sass
 [`gulp-postcss`]:               https://www.npmjs.com/package/gulp-postcss
+[`postcss-scss`]:               https://github.com/postcss/postcss-scss
 
 [`postcss-inline-svg`]:         https://github.com/TrySound/postcss-inline-svg
 [`postcss-preset-env`]:         https://github.com/jonathantneal/postcss-preset-env
@@ -202,21 +205,21 @@ Plugins
 Future opportunities
 --------------------------------------------------
 
-* Develope Build function
-* [`gulp-changed`] и [`gulp-newer`] 
-* [`tmi`]
-* [`grunt-phantomas`]
-* [`grunt-gitbook`]
-* [`gulp-duration`]
-* [`grunt-conventional-changelog`]
-* [`grunt-usebanner`]
-* [`husky`]
-* [`Pug`]
-* [`Grunt-js`]
-* [`Bower`]
-* [`psi`]
-* [`ngrok`]
-* [`gulp-plato`]
+- Develope Build function
+- [`gulp-changed`] и [`gulp-newer`] 
+- [`tmi`]
+- [`grunt-phantomas`]
+- [`grunt-gitbook`]
+- [`gulp-duration`]
+- [`grunt-conventional-changelog`]
+- [`grunt-usebanner`]
+- [`husky`]
+- [`Pug`]
+- [`Grunt-js`]
+- [`Bower`]
+- [`psi`]
+- [`ngrok`]
+- [`gulp-plato`]
 
 
 

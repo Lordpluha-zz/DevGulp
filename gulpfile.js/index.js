@@ -150,7 +150,8 @@ $.gulp.task('default',
 		$.tasks['styles'].fonts,
 		$.tasks['github'].commit,
 
-		$.gulp.parallel($.tasks['serve'].browser,
+		$.gulp.parallel(
+			$.tasks['serve'].browser,
 			$.tasks['FileWatcher'].fileWatcher
 		)
 	)

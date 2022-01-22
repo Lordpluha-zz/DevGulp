@@ -19,11 +19,18 @@ $ContentMinWidth: 320;
 @import "_media.scss";
 @import "_preloader.scss";
 
+* {
+	&.lock {
+		overflow: hidden;
+	}
+}
+
 #wrapper {
 	width: 100%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	background-color: #FF0000;
 }
 
 #content {
@@ -36,7 +43,7 @@ $ContentMinWidth: 320;
 $AnimTime: 1s;
 $AnimDelay: 0s;
 
-._animElem {
+.anim-elem {
 	-webkit-transition: margin, padding .0s linear;
 	   -moz-transition: margin, padding .0s linear;
 	    -ms-transition: margin, padding .0s linear;
@@ -62,7 +69,7 @@ $AnimDelay: 0s;
 	        transition: opacity   $AnimTime ease-in-out $AnimDelay,
 	        			transform $AnimTime ease-in-out $AnimDelay;
 
-	&._active__fx {
+	&.active-fx {
 		transform: translate(0px, 0px);
 		opacity: 1;
 	}

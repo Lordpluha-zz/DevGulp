@@ -1,7 +1,10 @@
 const file_include 	= require('gulp-file-include'),
 		htmlmin		= require('gulp-htmlmin'),
 		htmlhint 	= require('gulp-htmlhint'),
-		gulpHtmlBV  = require('gulp-html-bem-validator');
+		gulpHtmlBV  = require('gulp-html-bem-validator')
+		
+		htmlhint_conf = require('./configs/index.js/gulp-htmlhint.config.js'),
+		htmlmin_conf = require('./configs/index.js/gulp-htmlmin.config.js');
 
 // Работа с php, html файлами
 function index(event) {
@@ -12,19 +15,14 @@ function index(event) {
 		.pipe( $.plumber({}))
 		.pipe( file_include() )
 		
-		.pipe( htmlhint() )
+		.pipe( htmlhint(htmlhint_conf))
 		.pipe( htmlhint.reporter() )
 		.pipe( gulpHtmlBV() )
 		
 		.pipe( $.rname({ extname: 'index.html', basename: '' }))
 		.pipe( $.gulp.dest(`./src/${$.start_page}/html/`) )
 		
-		.pipe( htmlmin({
-			collapseWhitespace: true,
-		    html5: true,
-		    removeComments: true,
-		    useShortDoctype: true
-		}) )
+		.pipe( htmlmin(htmlmin_conf) )
 		.pipe( $.rname({ extname: 'index.min.html', basename: '' }))
 
 		.pipe( $.gulp.dest(`./src/${$.start_page}/html/`) )

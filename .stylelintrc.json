@@ -1,0 +1,32 @@
+{
+	"extends": [
+		"stylelint-config-standard"
+	],
+	"overrides": [
+		{
+			"files": ["**/*.scss", "**/*.css"],
+			"customSyntax": "postcss-scss",
+			"rules": {
+				
+				"indentation": null,
+				"value-no-vendor-prefix": null,
+				"selector-pseudo-element-colon-notation": null,
+				"selector-list-comma-newline-after": null,
+				"selector-list-comma-newline-after": null,
+				"property-no-vendor-prefix": null,
+				"media-feature-name-no-vendor-prefix": null,
+				"rule-empty-line-before": null,
+				"no-missing-end-of-source-newline": null,
+				"max-line-length": null,
+				"length-zero-no-unit": null,
+				"font-family-name-quotes": null,
+				"comment-whitespace-inside": null,
+				"comment-empty-line-before": null,
+				"at-rule-empty-line-before": null,
+				"declaration-block-no-duplicate-properties": null,
+				"color-hex-case": null,
+				"color-hex-length": null
+			}
+		}
+	]
+}

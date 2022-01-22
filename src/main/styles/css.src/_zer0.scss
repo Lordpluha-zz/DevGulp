@@ -1,13 +1,13 @@
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+	    -ms-box-sizing: border-box;
+			  box-sizing: border-box;
+
 	padding: 0;
 	margin: 0;
 	border: none;
 	outline: none;
-	background-color: #fff;
 	/* not supported by: IE (7,8)
 	 	and only partially supported by: Opera Mini (all)
 	*/
@@ -15,9 +15,12 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+
 	-webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+       -moz-user-select: none;
+    	-ms-user-select: none;
+    		user-select: none;
+    
     list-style-type: none;
 
     @include adaptive-value('font-size', 20, 10, 1);
@@ -31,10 +34,6 @@
 	&:before {
 		transition: all .3s linear 0s;
 	}
-
-	&._lock {
-		overflow: hidden;
-	}	
 }
 html {
 	scroll-behavior: smooth;
@@ -44,15 +43,15 @@ body {
 }
 
 a, p, h1, h2, h3, h4, h5, h6 {
-	// font-family: 'Vollkorn', serif;
+	font-family: 'Roboto', Arial, serif, sans-serif;
 }
 a, button, input, textarea, form {
 	color: #000;
 	text-decoration: none;
 	border: 1px solid #000;
-	/*&:hover {
+	&:hover {
 		cursor: pointer;
-	}*/
+	}
 }
 span {
 	font-size: 100%;
