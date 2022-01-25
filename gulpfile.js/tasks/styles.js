@@ -28,7 +28,7 @@ function styles(event) {
 
 			// Optional //
 
-			// plug.pxtorem(),
+			plug.pxtorem(),
 
 
 

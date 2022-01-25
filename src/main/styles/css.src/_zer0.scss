@@ -1,3 +1,4 @@
+// Zer0
 * {
    -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -23,8 +24,7 @@
     
     list-style-type: none;
 
-    @include adaptive-value('font-size', 20, 10, 1);
-    @include adaptive-value('font-size', 30, 20, 2);
+   font-size: 20px;
 	
 	font-weight: 100;
 	line-height: 100%;

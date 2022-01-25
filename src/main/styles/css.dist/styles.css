@@ -11,7 +11,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-size: 30px;
+  font-size: 1.25rem;
   font-weight: 100;
   line-height: 100%;
   list-style-type: none;
@@ -19,16 +19,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none
-}
-@media (max-width:1004px) {
-  * {
-    font-size: calc(10px + 10 * ((100vw - 320px)/ 684))
-  }
-}
-@media (min-width:1004px) {
-  * {
-    font-size: calc(20px + 10 * ((100vw - 320px)/ 2240))
-  }
 }
 *,
 :after,
@@ -157,7 +147,6 @@ img {
   display: flex;
   width: 100%;
   height: 100%;
-  background-color: red;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -165,13 +154,13 @@ img {
 }
 #content {
   display: block;
-  max-width: 1004px;
+  max-width: 2000px;
   margin: 0 auto;
   padding: 20px
 }
-@media (max-width:1004px) {
+@media (max-width:2000px) {
   #content {
-    padding: calc(0px + 20 * ((100vw - 320px)/ 684))
+    padding: calc(0px + 20 * ((100vw - 320px)/ 1680))
   }
 }
 .anim-elem {

@@ -1,3 +1,4 @@
+// Mixins
 @mixin adaptive-value ($property, $startSize, $minSize, $type) {
 	$addSize: $startSize - $minSize;
 	// Меньше контейнера

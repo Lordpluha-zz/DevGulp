@@ -6,75 +6,62 @@ function browser(event) {
 	if ($.OpenServer_conn == 'True') {
 		$.browserSync.init({
 			https: {
-	    		key: "localhost-privateKey.key",
-	    		cert: "localhost.crt"
-	    	},
-    		proxy: $.proxy,
-  			port: $.port,
-  			injectChanges: true,
-  			watch: true,
-  			// Синхронизация всех устройств и их действий
+				key: "localhost-server.key",
+				cert: "localhost-server.crt"
+			},
+			proxy: $.proxy,
+			port: $.port,
+			injectChanges: true,
+			watch: true,
+			// Синхронизация всех устройств и их действий
 			ghostMode: {
-			    clicks: true,
-			    forms: true,
-			    scroll: true
+				clicks: true,
+				forms: true,
+				scroll: true
 			},
 			logLevel: "debug",
 			logPrefix: $.Project_name,
 			logConnections: true,
 			logFileChanges: true,
-			open: false,
+			open: true,
 			reloadOnRestart: true,
 			notify: true,
 			scrollProportionally: true,
 			codeSync: true,
 			timestamps: true,
-			files: [
-				`./src/${$.start_page}/**/.php`,
-				`./src/${$.start_page}/styles/css.dist/styles.{css, css.map}`,
-				`./src/${$.start_page}/styles/fonts/**/*.{.otf, .ttf, .woff, .woff2, .eot, .eot?#iefix}`,
-				`./src/${$.start_page}/html/index.html`,
-				`./src/${$.start_page}/js/scripts/scripts.{js, min.js}`
-			]
-    	});
+			// files: [
+			// 	`./src/${$.start_page}/***.{php, min.php}`,
+			// 	`./src/${$.start_page}/styles/**/*.{css, css.map, scss, min.css}`,
+			// 	`./src/${$.start_page}/styles/fonts/**/*.{otf, ttf, woff, woff2, eot, eot?#iefix}`,
+			// 	`./src/${$.start_page}/html/*.html`,
+			// 	`./src/${$.start_page}/js/**/*.{js, min.js}`
+			// ]
+		});
 	} else {
 		$.browserSync.init({
-			server: `./src/${$.start_page}/`
-			/*
 			server: {
-	    		baseDir: [`./src/${$.start_page}/`, `./src/${$.start_page}/html`, `./dist/${$.start_page}`],
-	    		https: {
-	    			key: "localhost-privateKey.key",
-	    			cert: "localhost.crt"
-	    		}
-	    	},
-			*/
-	    	/*
-	    	watch: true,
-	    	injectChanges: true,
-	    	rewriteRules: [
-			  	{
-			      	match: /Content-Security-Policy/,
-			      	fn: function (match) {
-			        	return "DISABLED-Content-Security-Policy";
-			      	}
-			  	}
-			],
+				baseDir: [`./src/`],
+			},
+			https: {
+				key: "localhost-server.key",
+				cert: "localhost-server.crt"
+			},
+			watch: true,
+			injectChanges: true,
 			// Синхронизация всех устройств и их действий
 			ghostMode: {
-			    clicks: true,
-			    forms: true,
-			    scroll: true
+				clicks: true,
+				forms: true,
+				scroll: true
 			},
-			*/
 			// files: [
-			// 	`./src/${$.start_page}/**/.{php, min.php}`,
-			// 	`./src/${$.start_page}/styles/css.dist/styles.{css, css.map}`,
+			// 	`./src/${$.start_page}/***.{php, min.php}`,
+			// 	`./src/${$.start_page}/styles/**/*.{css, css.map, scss, min.css}`,
 			// 	`./src/${$.start_page}/styles/fonts/**/*.{otf, ttf, woff, woff2, eot, eot?#iefix}`,
-			// 	`./src/${$.start_page}/html/index.html`,
-			// 	`./src/${$.start_page}/js/scripts/scripts.{js, min.js}`
+			// 	`./src/${$.start_page}/html/*.html`,
+			// 	`./src/${$.start_page}/js/**/*.{js, min.js}`
 			// ]
-    	});
+		});
 	}
 
 };

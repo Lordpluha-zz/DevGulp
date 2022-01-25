@@ -8,7 +8,7 @@ $MaketWidth: 1366;
 $SiteMaxWidth: 2560;
 
 // Максимальная ширина контентного блока
-$ContentMaxWidth: 1004;
+$ContentMaxWidth: 2000;
 
 // Минимальная поддерживаемая ширина
 $ContentMinWidth: 320;
@@ -30,7 +30,6 @@ $ContentMinWidth: 320;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	background-color: #FF0000;
 }
 
 #content {
