@@ -11,7 +11,7 @@ $SiteMaxWidth: 2560;
 $ContentMaxWidth: 2000;
 
 // Минимальная поддерживаемая ширина
-$ContentMinWidth: 320;
+$SiteMinWidth: 320;
 
 @import "_mixins.scss";
 @import "_zer0.scss";
@@ -20,6 +20,11 @@ $ContentMinWidth: 320;
 @import "_preloader.scss";
 
 * {
+	
+}
+
+html {
+	@include adaptive-value('font-size', 15, 25, 3);
 	&.lock {
 		overflow: hidden;
 	}
@@ -36,12 +41,12 @@ $ContentMinWidth: 320;
 	display: block;
 	margin: 0 auto;
 	max-width: $ContentMaxWidth+px;
-	@include adaptive-value('padding', 20, 0, 1);
 }
 
+
+// Красивая загрузка элементов (см. так же в script.js)
 $AnimTime: 1s;
 $AnimDelay: 0s;
-
 .anim-elem {
 	-webkit-transition: margin, padding .0s linear;
 	   -moz-transition: margin, padding .0s linear;

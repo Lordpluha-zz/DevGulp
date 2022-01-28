@@ -17,6 +17,8 @@ module.exports = {
 		'transforms2d',
 		'fontface',
 		'flexbox',
-		'css-gencontent'
+		'css-gencontent',
+		'wordwrap',
+		'word-break'
 	]
 }

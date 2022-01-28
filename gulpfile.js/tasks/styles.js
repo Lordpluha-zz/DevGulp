@@ -9,7 +9,10 @@ const plug 					= require('./vars/styles.vars.js'),
 	  doiuse_conf 			= require('./configs/styles.js/doiuse.config.js'),
 	  browser_rep_config 	= require('./configs/styles.js/postcss-browser-reporter.config.js'),
 	  cleanCSS_conf 		= require('./configs/styles.js/gulp-clean-css.config.js'),
-	  cssnano_conf 			= require('./configs/styles.js/cssnano.config.js');
+	  cssnano_conf 			= require('./configs/styles.js/cssnano.config.js'),
+	  stylelint_conf 		= require('./configs/styles.js/stylelint.config.js');
+
+
 
 // Styles processing
 function styles(event) {
@@ -17,6 +20,14 @@ function styles(event) {
 		// Initialization plumber error chech and sourcemap
 		.pipe( $.plumber())
 		.pipe( plug.srcmap.init() )
+
+		.pipe( plug.postcss([
+			// Linting //
+			plug.stylelint(stylelint_conf)
+		],
+		{
+			syntax: plug.postcss_scss
+		}))
 		
 		// SCSS
 		.pipe( plug.scss().on('error', plug.scss.logError) )
@@ -24,11 +35,12 @@ function styles(event) {
 		// PostCSS pre/post processing
 		.pipe( plug.postcss([
 			// Preprocessing //
+
 			plug.webp_css(),
 
-			// Optional //
-
 			plug.pxtorem(),
+
+
 
 
 
@@ -43,8 +55,7 @@ function styles(event) {
 
 
 
-			// Linting //
-			plug.stylelint(),
+			
 
 			// Analyse //
 			plug.doiuse(doiuse_conf),

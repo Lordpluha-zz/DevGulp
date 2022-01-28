@@ -1,33 +1,32 @@
 // Zer0
 * {
-   -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-	    -ms-box-sizing: border-box;
-			  box-sizing: border-box;
+	position: relative;
+	box-sizing: border-box;
+	z-index: 0;
 
 	padding: 0;
 	margin: 0;
 	border: none;
 	outline: none;
-	/* not supported by: IE (7,8)
-	 	and only partially supported by: Opera Mini (all)
-	*/
+
 	background-image: none;
 	background-size: cover;
-	background-position: center;
+	background-position: center center;
 	background-repeat: no-repeat;
+	background-clip: padding-box;
 
-	-webkit-user-select: none;
-       -moz-user-select: none;
-    	-ms-user-select: none;
-    		user-select: none;
+	overflow: visible;
+	overflow-wrap: normal;
+	word-break: normal;
+
+   	user-select: none;
     
-    list-style-type: none;
+   	list-style-type: none;
 
-   font-size: 20px;
-	
-	font-weight: 100;
-	line-height: 100%;
+   	font-size: 20px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.48;
 
 	&,
 	&:after,
@@ -35,29 +34,33 @@
 		transition: all .3s linear 0s;
 	}
 }
+
 html {
 	scroll-behavior: smooth;
 }
+
 body {
 	
 }
 
-a, p, h1, h2, h3, h4, h5, h6 {
+a, p, h1, h2, h3, h4, h5, h6, span, label, input, button, textarea {
 	font-family: 'Roboto', Arial, serif, sans-serif;
 }
+
 a, button, input, textarea, form {
 	color: #000;
 	text-decoration: none;
-	border: 1px solid #000;
+	border: none;
 	&:hover {
 		cursor: pointer;
 	}
 }
+
 span {
 	font-size: 100%;
 }
+
 img {
-	/* Не поддерживаеться Internet Explorer*/
 	max-width: 100%;
 	object-fit: cover;
 	object-position: center;
