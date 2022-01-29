@@ -16,7 +16,16 @@ const scss                                  = require('gulp-sass')(require('sass
 		webp_css                                = require('webp-in-css/plugin'),
 
 		// Auto convert px -> rem
-		pxtorem                                 =  require('postcss-pxtorem')
+		pxtorem                                 =  require('postcss-pxtorem'),
+
+		// Sqrt()
+		sqrt 							= require('postcss-sqrt'),
+
+		// Pow()
+		pow 							= require('postcss-pow'),
+
+		// Allow supporting vhw
+		vwh 							= require('postcss-vwh'),
 
 	/* <+++++++++++++++ [Linting] +++++++++++++++> */
 
@@ -33,11 +42,17 @@ const scss                                  = require('gulp-sass')(require('sass
 
 	/* <+++++++++++++++ [Postprocessing] +++++++++++++++> */
 	
+		// Automatically detects and combines duplicated css selectors
+		combine_duplicated_selectors 	= require('postcss-combine-duplicated-selectors'),
+
 		// Autoprefixer
 		autoprefixer                        = require('autoprefixer'),
 
 		// Sorting rules
 		postcss_sorting                 = require('postcss-sorting'),
+
+		// Fix known Browser Bugs
+		fixes 									= require('postcss-fixes'),
 
 		// Minificator
 		cssnano                                 = require('cssnano'),
@@ -70,9 +85,14 @@ module.exports = {
 
 	webp_css,
 	pxtorem,
-
+	sqrt,
+	pow,
+	vwh,
+	
+	combine_duplicated_selectors,
 	autoprefixer,
 	postcss_sorting,
+	fixes,
 
 	stylelint,
 	doiuse,

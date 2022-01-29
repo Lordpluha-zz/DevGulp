@@ -3,22 +3,24 @@ module.exports = {
 		"last 5 versions",
 		"> 1%"
 	],
+	
 	ignore: [
 		'css3-boxsizing',
 		'outline',
-		'css-mediaqueries',
 		'background-img-opts',
-		'user-select-none',
+		'css-mediaqueries',
+		'css-gencontent',
 		'viewport-units',
-		'object-fit',
-		'calc',
+		'word-break',
 		'css-transitions',
+		'fontface',
 		'css-opacity',
 		'transforms2d',
-		'fontface',
 		'flexbox',
-		'css-gencontent',
-		'wordwrap',
-		'word-break'
+		'calc',
+		'object-fit',
+		'user-select-none',
+		'wordwrap'
 	]
+
 }

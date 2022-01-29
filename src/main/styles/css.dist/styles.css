@@ -33,6 +33,10 @@
   -o-transition: .3s linear;
   transition: .3s linear
 }
+html {
+  font-size: calc(160rem + 10 * ((100vw - 20rem)/ 2560-320));
+  scroll-behavior: smooth
+}
 a,
 button,
 h1,
@@ -146,10 +150,6 @@ img {
   font-weight: 400;
   src: url(../fontsRoboto-ThinItalic.ttf) format("truetype")
 }
-html {
-  scroll-behavior: smooth;
-  font-size: calc(160rem + 10 * ((100vw - 20rem)/ 2560-320))
-}
 html.lock {
   overflow: hidden
 }
@@ -170,13 +170,13 @@ html.lock {
   margin: 0 auto
 }
 .anim-elem {
-  -webkit-transition: opacity 1s ease-in-out,-webkit-transform 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out,transform 1s ease-in-out;
-  transition: opacity 1s ease-in-out,transform 1s ease-in-out,-webkit-transform 1s ease-in-out;
   -webkit-transform: translate(0,-100%);
   -ms-transform: translate(0,-100%);
   transform: translate(0,-100%);
-  opacity: 0
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out,-webkit-transform 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out,transform 1s ease-in-out;
+  transition: opacity 1s ease-in-out,transform 1s ease-in-out,-webkit-transform 1s ease-in-out
 }
 .anim-elem.active-fx {
   -webkit-transform: translate(0,0);

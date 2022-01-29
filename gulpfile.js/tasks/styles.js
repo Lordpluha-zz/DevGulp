@@ -35,16 +35,17 @@ function styles(event) {
 		// PostCSS pre/post processing
 		.pipe( plug.postcss([
 			// Preprocessing //
-
 			plug.webp_css(),
-
 			plug.pxtorem(),
-
-
+			plug.sqrt(),
+			plug.pow(),
+			plug.vwh(),
 
 
 
 			// Postprocessing //
+			plug.combine_duplicated_selectors({removeDuplicatedProperties: true}),
+
 			plug.autoprefixer(autoprefxr_conf),
 			// Working: Yes
 			// Setted up: Yes
@@ -52,11 +53,9 @@ function styles(event) {
 			plug.postcss_sorting(sorting_conf),
 			// Working: Yes
 			// Setted up: Yes
-
-
-
 			
-
+			plug.fixes({preset: 'safe'}),
+			
 			// Analyse //
 			plug.doiuse(doiuse_conf),
 			// Working: Yes
