@@ -4,7 +4,7 @@ async function build() {
 		return $.gulp.src([
 				`./src/${$.pages[i]}/html/index.min.html`,
 				`./src/${$.pages[i]}/styles/css.dist/styles.{min.css, css.map}`,
-				`./src/${$.pages[i]}/php/*.min.php`,
+				`./src/${$.pages[i]}/php/**/*.{min.php, php}`,
 				`./src/${$.pages[i]}/js/**/*.min.js`,
 				`./src/${$.pages[i]}/img/**/*.min.*`
 			])       

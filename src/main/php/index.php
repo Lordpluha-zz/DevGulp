@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Test">
+    <meta name="application-name" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="">
+    <meta name="referrer" content="">
+    <meta name = "robots" content="">
 
+    <meta http-equiv="content-language" content="">
+    <meta http-equiv="Content-Security-Policy" content="">
+    <meta http-equiv="content-type" content="">
+    <meta http-equiv="default-style" content="">
+    <meta http-equiv="refresh" content="">
+    <meta http-equiv="set-cookie" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="ico.png" type="image/png">
-
-    <meta name="description" content="description">
-    <!-- <meta name="application-name" content="app"> -->
-    <!-- <meta name="author" content="LP"> -->
-    <!-- <meta name="keywords" content="test"> -->
-    <!-- <meta name="generator" content=""> -->
-    <!-- <meta name="referrer" content=""> -->
-    <meta name="robots" content="index">
-
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';"> -->
-    <meta http-equiv="content-type" content="text/html">
-    <!-- <meta http-equiv="default-style" content="href=styles.min.css"> -->
-    <!-- <meta http-equiv="refresh" content=""> -->
 
     <title>Document</title>
+
+    <link rel="shortcut icon" href="ico.png" type="image/png">
 
     <link rel="stylesheet" href="../styles/css.dist/styles.min.css">
     <link rel="stylesheet" href="../styles/css.dist/styles.css.map">
@@ -39,15 +40,15 @@
 <body>
     <div id="wrapper">
 
-        @@include('blocks/nav.html')
+        <?php require 'blocks/nav.php'; ?>
 
-        @@include('blocks/header.html')
+        <?php require 'blocks/header.php'; ?>
 
-        @@include('blocks/article.html')
+        <?php require 'blocks/article.php'; ?>
 
-        @@include('blocks/aside.html')
+        <?php require 'blocks/aside.php'; ?>
 
-        @@include('blocks/footer.html')
+        <?php require 'blocks/footer.php'; ?>
 
     </div>
 

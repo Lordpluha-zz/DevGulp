@@ -24,10 +24,19 @@ $SiteMinWidth: 320;
 }
 
 html {
+	/*
+	Элемент, отвечающий
+	за адаптивность шрифтов
+	всей страницы
+	*/
 	@include adaptive-value('font-size', 15, 25, 3);
 	&.lock {
 		overflow: hidden;
 	}
+}
+
+body {
+
 }
 
 #wrapper {

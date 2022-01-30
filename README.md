@@ -29,7 +29,144 @@ Structure
 --------------------------------------------------
 
 <!-- tree /A /F  (без node_modules)-->
-
+ _________
+|         |
+| DevGulp |
+|_________|
+   |   .gitattributes
+   |   .gitignore
+   |   .htaccess
+   |   .stylelintrc.json
+   |   Apache_2.4-PHP_8.0+Nginx_1.21_vhosta.conf
+   |   gmail_ico.png
+   |   inst_ico.png
+   |   LICENSE
+   |   localhost-rootCA.crt
+   |   localhost-rootCA.key
+   |   localhost-server.crt
+   |   localhost-server.key
+   |   package-lock.json
+   |   package.json
+   |   postcss.config.js
+   |   README.md
+   |   rootCA.crt
+   |   rootCA.key
+   |   SECURITY.md
+   |   server.crt
+   |   server.key
+   |   tree.txt
+   |   
+   +---dist
+   |   \---main
+   |       |   index.min.html
+   |       |   styles.min.css
+   |       |   
+   |       \---scripts
+   |               scripts.min.js
+   |               
+   +---gulpfile.js
+   |   |   file_for_uploading_fonts_to_scss.py
+   |   |   index.js
+   |   |   
+   |   +---configs
+   |   \---tasks
+   |       |   build.js
+   |       |   clean.js
+   |       |   FileWatcher.js
+   |       |   github.js
+   |       |   images.js
+   |       |   index.js
+   |       |   lighthouse.js
+   |       |   scripts.js
+   |       |   serve.js
+   |       |   styles.js
+   |       |   
+   |       +---configs
+   |       |   +---index.js
+   |       |   |       gulp-htmlhint.config.js
+   |       |   |       gulp-htmlmin.config.js
+   |       |   |       
+   |       |   \---styles.js
+   |       |           autoprefixer.config.js
+   |       |           cssnano.config.js
+   |       |           doiuse.config.js
+   |       |           gulp-clean-css.config.js
+   |       |           postcss-browser-reporter.config.js
+   |       |           postcss-sorting.config.js
+   |       |           stylelint.config.js
+   |       |           
+   |       \---vars
+   |               styles.vars.js
+   |               
+   \---src
+       \---main
+           +---html
+           |   |   index.html
+           |   |   index.min.html
+           |   |   index.src.html
+           |   |   
+           |   \---blocks
+           |           article.html
+           |           aside.html
+           |           footer.html
+           |           header.html
+           |           nav.html
+           |           
+           +---img
+           |   +---article
+           |   +---aside
+           |   +---footer
+           |   +---header
+           |   \---nav
+           +---js
+           |   +---plugins
+           |   |   \---HTML5Shiv
+           |   |           html5shiv-master.zip
+           |   |           html5shiv-printshiv.min.js
+           |   |           html5shiv.min.js
+           |   |           
+           |   \---scripts
+           |           scripts.js
+           |           scripts.min.js
+           |           
+           +---php
+           \---styles
+               +---css.dist
+               |       styles.css
+               |       styles.css.map
+               |       styles.min.css
+               |       
+               +---css.src
+               |       styles.scss
+               |       _article.scss
+               |       _aside.scss
+               |       _fonts.scss
+               |       _footer.scss
+               |       _header.scss
+               |       _media.scss
+               |       _mixins.scss
+               |       _nav.scss
+               |       _preloader.scss
+               |       _zer0.scss
+               |       
+               \---fonts
+                   |   Roboto.zip
+                   |   
+                   \---Roboto
+                           LICENSE.txt
+                           Roboto-Black.ttf
+                           Roboto-BlackItalic.ttf
+                           Roboto-Bold.ttf
+                           Roboto-BoldItalic.ttf
+                           Roboto-Italic.ttf
+                           Roboto-Light.ttf
+                           Roboto-LightItalic.ttf
+                           Roboto-Medium.ttf
+                           Roboto-MediumItalic.ttf
+                           Roboto-Regular.ttf
+                           Roboto-Thin.ttf
+                           Roboto-ThinItalic.ttf
+                        
 
 
 Functions
@@ -96,7 +233,7 @@ Tasks
 > ...
 
 ### build
-> ...
+> Copy .min files in different directory
 
 
 
@@ -209,13 +346,11 @@ Future opportunities
 - [`gulp-changed`] и [`gulp-newer`] 
 - [`tmi`]
 - [`grunt-phantomas`]
-- [`grunt-gitbook`]
 - [`gulp-duration`]
 - [`grunt-conventional-changelog`]
 - [`grunt-usebanner`]
 - [`husky`]
 - [`Pug`]
-- [`Grunt-js`]
 - [`Bower`]
 - [`psi`]
 - [`ngrok`]
@@ -227,7 +362,6 @@ Future opportunities
 [`gulp-newer`]:                     https://github.com/Lordpluha/DevGulp
 [`tmi`]:                            https://github.com/Lordpluha/DevGulp
 [`grunt-phantomas`]:                https://github.com/Lordpluha/DevGulp
-[`grunt-gitbook`]:                  https://github.com/Lordpluha/DevGulp
 [`gulp-duration`]:                  https://github.com/Lordpluha/DevGulp
 [`grunt-conventional-changelog`]:   https://github.com/Lordpluha/DevGulp
 [`grunt-usebanner`]:                https://github.com/Lordpluha/DevGulp

@@ -19,9 +19,10 @@ function browser(event) {
 				forms: true,
 				scroll: true
 			},
-			logLevel: "debug",
+			// 'debug' if have problem)
+			logLevel: "info",
 			logPrefix: $.Project_name,
-			logConnections: true,
+			logConnections: false,
 			logFileChanges: true,
 			open: true,
 			reloadOnRestart: true,
