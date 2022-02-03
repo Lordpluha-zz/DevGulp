@@ -16,7 +16,7 @@ $.tasks = {
 	'index': 		require('./tasks/index'),
 	'styles': 		require('./tasks/styles'),
 	'scripts': 	 	require('./tasks/scripts'),
-	'images': 		require('./tasks/images.js'),
+	'images': 		require('./tasks/images'),
 
 	'FileWatcher': 	require('./tasks/FileWatcher'),
 	'serve': 		require('./tasks/serve'),
@@ -41,7 +41,7 @@ $.proxy = 			$.Project_name;
 
 // Test info
 function defaultTask(cb) {
-	console.log('Created by Teslyuk Vladislav!!! :-)')
+	console.log('Created by Lordpluha!!! :-)')
   	cb();
 };
 

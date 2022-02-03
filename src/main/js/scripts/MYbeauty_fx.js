@@ -35,6 +35,3 @@ document.addEventListener('DOMContentLoaded', function() {
 	console.log('JS succesfully initializated!');
 
 });
-function call() {
-	console.log('SS.js');
-}
