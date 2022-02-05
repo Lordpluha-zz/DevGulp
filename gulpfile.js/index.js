@@ -3,6 +3,7 @@ global.$ = {};
 
 // ============================ [ Plugins ] ============================ \\
 $.gulp = require('gulp');
+
 $.rname = require('gulp-rename');
 $.plumber = require('gulp-plumber');
 // Not connected
@@ -12,19 +13,20 @@ $.shell = require('gulp-shell');
 
 
 // ========================== [ External files ] ========================== \\
+
 $.tasks = {
-	'index': 		require('./tasks/index'),
-	'styles': 		require('./tasks/styles'),
-	'scripts': 	 	require('./tasks/scripts'),
-	'images': 		require('./tasks/images'),
+	'index': 		require('./tasks/index.js'),
+	'styles': 		require('./tasks/styles.js'),
+	'scripts': 	 	require('./tasks/scripts.js'),
+	'images': 		require('./tasks/images.js'),
 
-	'FileWatcher': 	require('./tasks/FileWatcher'),
-	'serve': 		require('./tasks/serve'),
+	'FileWatcher': 	require('./tasks/FileWatcher.js'),
+	'serve': 		require('./tasks/serve.js'),
 
-	'github': 		require('./tasks/github'),
+	'github': 		require('./tasks/github.js'),
 
-	'clean': 		require('./tasks/clean'),
-	'build': 		require('./tasks/build'),
+	'clean': 		require('./tasks/clean.js'),
+	'build': 		require('./tasks/build.js'),
 
 };
 
@@ -81,5 +83,6 @@ $.gulp.task('default',
 );
 
 $.gulp.task('test', defaultTask);
+
 
 $.gulp.task('build', $.gulp.series($.tasks['clean'].clean, $.tasks['build'].build /*, $.tasks['analytics'].lighthouse*/));

@@ -1,12 +1,10 @@
 DevGulp Project
 ============================================================================
 
-###### created by Lordpluha)
+###### created by @Lordpluha:wink:
 
 ### Main targets of a project
-> Realization gulp-building and processing based on new modern tendation of front-end and back-end dev([`gulp-postcss`], [`gulp-sass`]).
-
-
+> Realization gulp-building and processing based on new modern tendation of front-end and back-end dev.
 
 Using
 --------------------------------------------------
@@ -27,9 +25,9 @@ Main target of gulpfile is using automatisation functions for web-dev, written o
 
 Structure
 --------------------------------------------------
-
+<details><summary>Show structure</summary>
 <!-- tree /A /F  (без node_modules)-->
- _________
+ \_\_\_\_\_\_\_\_\_
 |         |
 | DevGulp |
 |_________|
@@ -167,27 +165,26 @@ Structure
                            Roboto-Thin.ttf
                            Roboto-ThinItalic.ttf
                         
-
+</details>
 
 Functions
 --------------------------------------------------
 
-- ### Browser
-
-> This function must be responsible for **local server** of a page and injection file in project **on the fly**.
-
-
-
-- ### Index
-
-> This function responsible for processing html and php files and calling reload of a page when they are changed.
-
-
-
-- ### Styles
-
-> This function responsible for processing css files and perfectioning them.
-
+|    Function name     |               Description                 |   File    |
+|        :---:         | :---                                      |   :---:   |
+| `gulp browser`       | **local server** and inject "on the fly". | serve.js  |
+| `gulp browserReload` | reload page                               | serve.js  |
+| `gulp index`         | processing html calling reload.           | index.js  |
+| `gulp php`           | processing php, calling reload.           | index.js  |
+| `gulp styles`        | processing and modificating scss -> css   | styles.js |
+| `gulp fonts`         | upload fonts to _fonts.css by using file_for_uploading_fonts_to_css.py| styles.js |
+|                      |                                           |           |
+|                      |                                           |           |
+|                      |                                           |           |
+|                      |                                           |           |
+|                      |                                           |           |
+|                      |                                           |           |
+|                      |                                           |           |
 
 
 - ### Fonts

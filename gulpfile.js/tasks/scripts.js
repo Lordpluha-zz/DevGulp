@@ -47,6 +47,7 @@ function scripts(event) {
 		
 		
 		.pipe(concat({path: 'scripts.js'}))
+
 		.pipe( $.gulp.dest(`./src/${$.start_page}/js/scripts/`))
 
 
@@ -56,8 +57,8 @@ function scripts(event) {
 
 		// Minification
 		.pipe(uglify())
-		
 		.pipe( map.write('./'))
+		
 		
 		
 		.pipe( $.rname({suffix: '.min'}) )
