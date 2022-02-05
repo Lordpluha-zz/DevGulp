@@ -35,7 +35,7 @@ $.tasks = {
 $.Project_name = 	'DevGulp';
 $.pages = 			['main'];
 $.start_page = 		$.pages[0];
-$.OpenServer_conn = 'True';
+$.OpenServer_conn = 'False';
 $.port = 			8282;
 $.proxy = 			$.Project_name;
 
