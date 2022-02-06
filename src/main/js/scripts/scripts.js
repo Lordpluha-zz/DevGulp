@@ -1,37 +1,39 @@
-document.addEventListener('DOMContentLoaded', function() {
-	
-	// Content upploading effect
-	var AnimItems = document.getElementsByClassName('._anim-elem');
+document.addEventListener('DOMContentLoaded', function () {
+  // Content upploading effect
+  var AnimItems = document.getElementsByClassName('._anim-elem');
 
-	function offset(el) {
-		var rect = el.getBoundingClientRect(),
-			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-		return { top: rect.top + scrollTop, left: rect.left + scrollLeft};
-	}
+  function offset(element) {
+    var rect = element.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset,
+        scrollTop = window.pageYOffset;
+    return {
+      top: rect.top + scrollTop,
+      left: rect.left + scrollLeft
+    };
+  }
 
-	function animOnScroll () {
-		for (var index = 0; index < AnimItems.length; index++) {
-			var AnimItem = AnimItems[index];
-			var AnimItemHeight = AnimItem.offsetHeight;
-			var AnimItemOffset = offset(AnimItem).top;
-			var animStart = 4;
+  function animOnScroll() {
+    for (var i = 0; i < AnimItems.length; i++) {
+      // Текущие параметры елемента
+      var AnimItem = AnimItems[i];
+      var AnimItemHeight = AnimItem.offsetHeight;
+      var AnimItemOffset = offset(AnimItem).top; // Часть страницы, при которой срабатывает еффект
 
-			var animItemPoint = window.innerHeight - AnimItemHeight / animStart;
-			if (AnimItemHeight > window.innerHeight) {
-				animItemPoint = window.innerHeight - window.innerHeight / animStart;
-			}
+      var animStart = 4; // Точка налача анимации
 
-			if ((window.pageYOffset > AnimItemOffset - animItemPoint) && window.pageYOffset < (AnimItemOffset + AnimItemHeight)) {
-				AnimItem.classList.add('_active__fx');
-			}
-		}
-	}
+      var animItemPoint = window.innerHeight - AnimItemHeight / animStart;
 
-	window.addEventListener('scroll', animOnScroll());
+      if (AnimItemHeight > window.innerHeight) {
+        animItemPoint = window.innerHeight - window.innerHeight / animStart;
+      }
 
-	setTimeout(animOnScroll, 300);
+      if (window.pageYOffset > AnimItemOffset - animItemPoint && window.pageYOffset < AnimItemOffset + AnimItemHeight) {
+        AnimItem.classList.add('_active__fx');
+      }
+    }
+  }
 
-	console.log('JS succesfully initializated!');
-
+  window.addEventListener('scroll', animOnScroll());
+  setTimeout(animOnScroll, 300);
+  console.log('JS succesfully initializated!');
 });

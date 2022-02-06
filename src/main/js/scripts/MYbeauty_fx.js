@@ -3,26 +3,33 @@ document.addEventListener('DOMContentLoaded', function() {
 	// Content upploading effect
 	var AnimItems = document.getElementsByClassName('._anim-elem');
 
-	function offset(el) {
-		var rect = el.getBoundingClientRect(),
-			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	function offset(element) {
+		var rect = element.getBoundingClientRect(),
+			scrollLeft = window.pageXOffset,
+			scrollTop = window.pageYOffset;
 		return { top: rect.top + scrollTop, left: rect.left + scrollLeft};
 	}
 
 	function animOnScroll () {
-		for (var index = 0; index < AnimItems.length; index++) {
-			var AnimItem = AnimItems[index];
+		for (var i = 0; i < AnimItems.length; i++) {
+
+			// Текущие параметры елемента
+			var AnimItem = AnimItems[i];
 			var AnimItemHeight = AnimItem.offsetHeight;
 			var AnimItemOffset = offset(AnimItem).top;
+
+			// Часть страницы, при которой срабатывает еффект
 			var animStart = 4;
 
+			// Точка налача анимации
 			var animItemPoint = window.innerHeight - AnimItemHeight / animStart;
+
 			if (AnimItemHeight > window.innerHeight) {
 				animItemPoint = window.innerHeight - window.innerHeight / animStart;
 			}
-
-			if ((window.pageYOffset > AnimItemOffset - animItemPoint) && window.pageYOffset < (AnimItemOffset + AnimItemHeight)) {
+			if ((window.pageYOffset > AnimItemOffset - animItemPoint) && window.pageYOffset < (AnimItemOffset + AnimItemHeight))
+			{
+				
 				AnimItem.classList.add('_active__fx');
 			}
 		}
