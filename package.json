@@ -27,7 +27,6 @@
   ],
   "homepage": "https://github.com/Lordpluha/DevGulp#readme",
   "devDependencies": {
-    "ansi-regex": "^6.0.1",
     "autoprefixer": "^10.4.2",
     "browser-sync": "^2.27.5",
     "cssnano": "^5.0.15",
@@ -60,9 +59,6 @@
     "imagemin-pngquant": "^9.0.2",
     "jshint": "^2.13.4",
     "jshint-stylish": "^2.2.1",
-    "lodash": "^4.17.21",
-    "lodash.template": "^4.5.0",
-    "nanoid": "^3.2.0",
     "npm": "^8.3.1",
     "postcss": "^8.4.5",
     "postcss-browser-reporter": "^0.6.0",
@@ -77,8 +73,6 @@
     "postcss-unopacity": "^2.0.0",
     "postcss-vwh": "^1.0.0",
     "sass": "^1.48.0",
-    "string-width": "^5.1.0",
-    "strip-ansi": "^7.0.1",
     "stylelint": "^14.2.0",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-scss": "^4.1.0",
@@ -86,8 +80,14 @@
     "webp-in-css": "^0.7.0"
   },
   "dependencies": {
+    "ansi-regex": "^6.0.1",
+    "lodash": "^4.17.21",
+    "lodash.template": "^4.5.0",
+    "nanoid": "^3.2.0",
     "nth-check": "^2.0.1",
     "semver-regex": "^4.0.2",
+    "string-width": "^5.1.0",
+    "strip-ansi": "^7.0.1",
     "trim-newlines": "^4.0.2"
   }
 }
