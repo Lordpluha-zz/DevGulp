@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Создание нового gulpfile на основе современных тендеций в WebDev",
   "main": "gulpfile.js",
-  "type": "commonjs",
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
     "test": "npm audit && echo \"Test success!\"",
