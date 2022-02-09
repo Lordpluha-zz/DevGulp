@@ -96,5 +96,5 @@ desktop.ini
 # Сертификаты и доп. файлы
 *.key
 *.srt
-*.conf
+# *.conf
 *.htaccess
