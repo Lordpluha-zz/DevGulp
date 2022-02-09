@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Создание нового gulpfile на основе современных тендеций в WebDev",
   "main": "gulpfile.js",
+  "type": "commonjs",
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
     "test": "npm audit && echo \"Test success!\"",
@@ -74,7 +75,7 @@
     "postcss-vwh": "^1.0.0",
     "sass": "^1.48.0",
     "stylelint": "^14.2.0",
-    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard": "^25.0.0",
     "stylelint-scss": "^4.1.0",
     "sugarss": "^4.0.1",
     "webp-in-css": "^0.7.0"
