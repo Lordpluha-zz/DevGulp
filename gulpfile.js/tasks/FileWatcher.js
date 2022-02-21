@@ -12,10 +12,7 @@ function fileWatcher() {
 	$.gulp.watch([`./src/${$.start_page}/img/**/**/*.{jpg, jpeg, png, svg, webp}`], $.tasks['images'].images);
 	$.gulp.watch([`./src/${$.start_page}/styles/fonts/**/*.{ttf, woff, otf}`], $.tasks['styles'].fonts);
 };
-
-// Работает
-
-// github
+// + github
 
 module.exports = {
 	fileWatcher: async function() {fileWatcher()}

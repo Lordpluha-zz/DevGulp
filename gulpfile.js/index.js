@@ -15,18 +15,18 @@ $.shell = require('gulp-shell');
 // ========================== [ External files ] ========================== \\
 
 $.tasks = {
-	'index': 		require('./tasks/index.js'),
-	'styles': 		require('./tasks/styles.js'),
-	'scripts': 	 	require('./tasks/scripts.js'),
-	'images': 		require('./tasks/images.js'),
+	'index': 			require('./tasks/index.js'),
+	'styles': 			require('./tasks/styles.js'),
+	'scripts': 	 		require('./tasks/scripts.js'),
+	'images': 			require('./tasks/images.js'),
 
-	'FileWatcher': 	require('./tasks/FileWatcher.js'),
-	'serve': 		require('./tasks/serve.js'),
+	'FileWatcher': 		require('./tasks/FileWatcher.js'),
+	'serve': 			require('./tasks/serve.js'),
 
-	'github': 		require('./tasks/github.js'),
+	'github': 			require('./tasks/github.js'),
 
-	'clean': 		require('./tasks/clean.js'),
-	'build': 		require('./tasks/build.js'),
+	'clean': 			require('./tasks/clean.js'),
+	'build': 			require('./tasks/build.js'),
 
 };
 
