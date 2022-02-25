@@ -1,6 +1,6 @@
 // Images
 const pngquant = require('imagemin-pngquant'),
-	  imagemin = require('gulp-imagemin'),
+	  imagemin = require('gulp-imagemin'), // !!!
 	  webp = require('gulp-webp');
 
 // Video

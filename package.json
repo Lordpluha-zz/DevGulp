@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Создание нового gulpfile на основе современных тендеций в WebDev",
   "main": "gulpfile.js",
-  "type": "module",
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
     "test": "npm audit && echo \"Test success!\"",
@@ -47,7 +46,6 @@
     "gulp-html-bem-validator": "^1.0.5",
     "gulp-htmlhint": "^4.0.1",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^8.0.0",
     "gulp-jshint": "^2.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
@@ -82,12 +80,6 @@
     "webp-in-css": "^0.7.0"
   },
   "dependencies": {
-    "ansi-regex": "^6.0.1",
-    "lodash": "^4.17.21",
-    "lodash.template": "^4.5.0",
-    "nth-check": "^2.0.1",
-    "semver-regex": "^4.0.2",
-    "string-width": "^5.1.0",
-    "trim-newlines": "^4.0.2"
+    "gulp-imagemin": "^7.1.0"
   }
 }

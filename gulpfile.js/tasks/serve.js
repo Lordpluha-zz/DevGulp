@@ -6,8 +6,8 @@ function browser(event) {
 	if ($.OpenServer_conn == 'True') {
 		$.browserSync.init({
 			https: {
-				key: "localhost-server.key",
-				cert: "localhost-server.crt"
+				key: "certificates/localhost-server.key",
+				cert:"certificates/localhost-server.crt"
 			},
 			proxy: $.proxy,
 			port: $.port,
@@ -44,8 +44,8 @@ function browser(event) {
 				baseDir: [`./src/`],
 			},
 			https: {
-				key: "localhost-server.key",
-				cert: "localhost-server.crt"
+				key: "certificates/localhost-server.key",
+				cert:"certificates/localhost-server.crt"
 			},
 			watch: true,
 			injectChanges: true,
