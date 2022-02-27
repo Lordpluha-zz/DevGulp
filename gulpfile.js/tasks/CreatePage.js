@@ -1,20 +1,17 @@
-const git = require('');
+const {execSync}  = require('child_process');
 
-var repo = "https://github.com/Lordpluha/DevGulp.git",
-	targetPath = "src/",
+var repo = "https://github.com/Lordpluha/main.git",
+	targetPath = "./src/",
 	options = {},
 	callback = function(event) {};
 
 function CreateNEWPage(event) {
-	git(repo, targetPath);
+	execSync(`cd ${targetPath} && git clone ${repo}`);
+	let pages_list = $.fs.readdirSync('./src/', {withFileTypes:true})
+		.filter(d => d.isDirectory())
+		.map(d => d.name);
+	console.log(pages_list);
 }
-
-var pages_dir = $.fs.readdirSync('./src/', {withFileTypes:true})
-	.filter(d => d.isDirectory())
-	.map(d => d.name);
-// List of pages
-console.log(pages_dir);
-
 
 module.exports = {
 	CreatePage: async function() {CreateNEWPage()}

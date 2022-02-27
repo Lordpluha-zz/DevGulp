@@ -70,7 +70,7 @@ $.gulp.task('js',    $.tasks['scripts'].scripts);
 
 $.gulp.task('img', 	 $.tasks['images'].images);
 
-$.gulp.task('CNEWP', $.tasks['CreatePage'].CreatePage);
+$.gulp.task('NewPage', $.tasks['CreatePage'].CreatePage);
 
 $.gulp.task('git',   $.tasks['github'].commit);
 
