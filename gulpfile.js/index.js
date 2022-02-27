@@ -2,15 +2,11 @@
 global.$ = {};
 
 // ============================ [ Plugins ] ============================ \\
-$.gulp = require('gulp');
-
-$.rname = require('gulp-rename');
+$.gulp 	  = require('gulp');
+$.rname   = require('gulp-rename');
+$.path 	  = require('path');
+$.fs      = require('fs');
 $.plumber = require('gulp-plumber');
-// Not connected
-$.shell = require('gulp-shell');
-// $.fs  = require('fs');
-
-
 
 // ========================== [ External files ] ========================== \\
 
@@ -27,23 +23,36 @@ $.tasks = {
 
 	'clean': 			require('./tasks/clean.js'),
 	'build': 			require('./tasks/build.js'),
-
+	'CreatePage': 		require('./tasks/CreatePage.js')
 };
+
+var pages_dir = $.fs.readdirSync('./src/', {withFileTypes:true})
+	.filter(d => d.isDirectory())
+	.map(d => d.name);
+
+$.fs.writeFileSync("./gulpfile.js/tasks/vars/pages_list.json", 
+		JSON.stringify({pages: pages_dir})
+	);
 
 // ============================ [ Options ] ============================ \\
 
-$.Project_name = 	'DevGulp';
-$.pages = 			['main'];
-$.start_page = 		$.pages[0];
-$.OpenServer_conn = 'False';
-$.port = 			8282;
-$.proxy = 			$.Project_name;
+$.Project_name    =	JSON.parse($.fs.readFileSync("package.json", "utf8"))["name"];
+$.pages 		  =	JSON.parse(
+		$.fs.readFileSync("./gulpfile.js/tasks/vars/pages_list.json", "utf8")
+	)["pages"];
+$.start_page 	  = 'main';
+$.OpenServer_conn = false;
+$.port 			  = 8282;
+$.proxy 		  = $.Project_name;
+$.https 		  = true;
+// debug || info
+$.logLevel 		  = 'info';
 
 // ============================ [ Functions ] ============================ \\
 
 // Test info
 function defaultTask(cb) {
-	console.log('Created by Lordpluha!!! :-)')
+	console.log('Created by Lordpluha!!! :-)');
   	cb();
 };
 
@@ -60,6 +69,8 @@ $.gulp.task('fonts', $.tasks['styles'].fonts);
 $.gulp.task('js',    $.tasks['scripts'].scripts);
 
 $.gulp.task('img', 	 $.tasks['images'].images);
+
+$.gulp.task('CNEWP', $.tasks['CreatePage'].CreatePage);
 
 $.gulp.task('git',   $.tasks['github'].commit);
 
@@ -83,6 +94,4 @@ $.gulp.task('default',
 );
 
 $.gulp.task('test', defaultTask);
-
-
-$.gulp.task('build', $.gulp.series($.tasks['clean'].clean, $.tasks['build'].build /*, $.tasks['analytics'].lighthouse*/));
+$.gulp.task('build', $.gulp.series($.tasks['clean'].clean, $.tasks['build'].build));

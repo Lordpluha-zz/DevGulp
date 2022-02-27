@@ -2,7 +2,6 @@
 
 // DataBase of plugins and configs
 const plug 					= require('./vars/styles.vars.js'),
-	  path 					= require('path'),
 	  
 	  autoprefxr_conf 		= require('./configs/styles.js/autoprefixer.config.js'),
 	  sorting_conf 			= require('./configs/styles.js/postcss-sorting.config.js'),
