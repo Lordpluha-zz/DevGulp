@@ -1,11 +1,9 @@
 // Images
 const pngquant = require('imagemin-pngquant'),
-	  imagemin = require('gulp-imagemin'), // !!!
+	  imagemin = require('gulp-imagemin'),
 	  webp = require('gulp-webp');
 
-// Video
-
-// Работа с картинками
+// Images processing
 function images(event) {
 	let img_dirs = ['nav', 'header', 'article', 'aside', 'footer'];
 	img_dirs.forEach( function(item1, index1, arr1) {
@@ -28,11 +26,12 @@ function images(event) {
 	});
 };
 
+// Video -> .webm and optimization
 function video(event) {
 	console.log("Video converter is epmty");
 };
 
-// Изменение картинок под определенные размеры
+// Image resizing
 function resz_img(event) {
 	console.log("RESZ_img is epmty");
 };

@@ -1,46 +1,57 @@
 $.browserSync = require('browser-sync').create();
 
-// Создание локального сервера
+// Local server
 function browser(event) {
 	// <<Open Server>> Enabling or Disabling
 	var conf = {
 		injectChanges: true,
 		watch: true,
-		// Синхронизация всех устройств и их действий
+		// Sync of all devices and them action
 		ghostMode: {
 			clicks: true,
 			forms: true,
 			scroll: true
 		},
-		// 'debug' if have problem)
+		scrollProportionally: true,
+		codeSync: true,
+
+		reloadOnRestart: true,
+
 		logLevel: $.logLevel,
 		logPrefix: $.Project_name,
 		logConnections: false,
 		logFileChanges: true,
+		
 		open: true,
-		reloadOnRestart: true,
 		notify: true,
-		scrollProportionally: true,
-		codeSync: true,
-		timestamps: true
+		timestamps: true,
+		online: true,
+		minify: false
 	}
 
+	// OS Panel on/off checking
 	if ($.OpenServer_conn == true) {
 		conf.proxy = $.proxy;
 		conf.port = $.port;
+		conf.serveStatic = [
+			`./src/${$.start_page}/html`,
+			`./src/${$.start_page}`
+		];
 	} else {
 		conf.server = {
-			baseDir: [`./src/`]
+			baseDir: [`./src/${$.start_page}`, `./src/${$.start_page}/html`]
 		};
 	}
 
+	// Https on/off check
 	if ($.https == true) {
 		conf.https = {
-			key: "certificates/localhost-server.key",
-			cert:"certificates/localhost-server.crt"
+			key: `${$.CertDir}/localhost-server.key`,
+			cert:`${$.CertDir}/localhost-server.crt`
 		};
 	}
 
+	// Server initialization
 	$.browserSync.init(conf);
 };
 

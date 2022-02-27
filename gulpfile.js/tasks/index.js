@@ -6,7 +6,7 @@ const file_include 	= require('gulp-file-include'),
 		htmlhint_conf = require('./configs/index.js/gulp-htmlhint.config.js'),
 		htmlmin_conf = require('./configs/index.js/gulp-htmlmin.config.js');
 
-// Работа с html файлами
+// HTML processing
 function index(event) {
 	return $.gulp.src([
 			`!./src/${$.start_page}/html/*.{min.html, html}`,
@@ -15,6 +15,7 @@ function index(event) {
 		.pipe( $.plumber({}))
 		.pipe( file_include() )
 		
+		// Check code quality
 		.pipe( htmlhint(htmlhint_conf))
 		.pipe( htmlhint.reporter() )
 		.pipe( gulpHtmlBV() )
@@ -22,15 +23,16 @@ function index(event) {
 		.pipe( $.rname({ extname: 'index.html', basename: '' }))
 		.pipe( $.gulp.dest(`./src/${$.start_page}/html/`) )
 		
+		// Minification
 		.pipe( htmlmin(htmlmin_conf) )
 		.pipe( $.rname({ extname: 'index.min.html', basename: '' }))
-
 		.pipe( $.gulp.dest(`./src/${$.start_page}/html/`) )
+		
 		.pipe($.plumber.stop())
 		.pipe( $.browserSync.reload({ stream:true }) );
 };
 
-// Работа с php файлами
+// PHP processing
 function php(event) {
 	return $.gulp.src([`!./src/${$.start_page}/php/*.min.php`,
 					   `./src/${$.start_page}/php/*.php`
@@ -38,12 +40,10 @@ function php(event) {
 		.pipe( $.plumber({}))
 
 		// Minification
-
 		.pipe( htmlmin({
 	    	collapseWhitespace: true,
 	    	ignoreCustomFragments: [ /<%[\s\S]*?%>/, /<\?[=|php]?[\s\S]*?\?>/ ]
 	    }))
-
 		.pipe( $.rname({extname: 'index.min.php', basename: ''}))
 		.pipe( $.gulp.dest(`./src/${$.start_page}/php`))
 

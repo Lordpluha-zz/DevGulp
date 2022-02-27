@@ -71,9 +71,10 @@ const scss                                  = require('gulp-sass')(require('sass
 	
 	// Beautifier
 	cleanCSS                                = require('gulp-clean-css'),
+
 	// Source map
 	srcmap                                  = require('gulp-sourcemaps'),
-	
+
 	// Execution CMD commands
 	{exec}                                  = require('child_process');
 

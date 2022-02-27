@@ -100,7 +100,7 @@ function styles(event) {
 		.pipe( $.browserSync.stream() );
 }
 
-// Обработка шрифтов !!!
+// Fonts processing
 function fonts(event) {
 	plug.exec(`py ./gulpfile.js/file_for_uploading_fonts_to_scss.py`,
 		(err, stdout, stderr) => {

@@ -1,5 +1,5 @@
-// Javascript обработка
-	// Объединение файлов☑
+// Javascript processing
+	// File union☑
 const concat = require('gulp-concat'),
 
 	// JS Linter☑
@@ -13,7 +13,7 @@ const concat = require('gulp-concat'),
 	// Beautifier as standart JQ, Yandex, Google, AirBnb
 		eslint = require('gulp-eslint'),
 
-	// Проверка качества кода ☑
+	// Check code quality ☑
 		complexity = require('gulp-complexity'),
 
 	// Compressor☑
@@ -31,7 +31,7 @@ function scripts(event) {
 		])
 		.pipe( $.plumber())
 		// Developing	
-		.pipe(jshint()) // '.jshintrc'
+		.pipe(jshint())
 		.pipe(jshint.reporter(stylish))
 
 		.pipe( map.init())

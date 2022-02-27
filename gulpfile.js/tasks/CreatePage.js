@@ -5,12 +5,16 @@ var repo = "https://github.com/Lordpluha/main.git",
 	options = {},
 	callback = function(event) {};
 
+// Create new page folder with name "main"
 function CreateNEWPage(event) {
 	execSync(`cd ${targetPath} && git clone ${repo}`);
+	/*
 	let pages_list = $.fs.readdirSync('./src/', {withFileTypes:true})
 		.filter(d => d.isDirectory())
 		.map(d => d.name);
-	console.log(pages_list);
+	*/
+	$.updatePagesList();
+	// console.log(pages_list);
 }
 
 module.exports = {

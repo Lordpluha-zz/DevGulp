@@ -26,25 +26,38 @@ $.tasks = {
 	'CreatePage': 		require('./tasks/CreatePage.js')
 };
 
-var pages_dir = $.fs.readdirSync('./src/', {withFileTypes:true})
+// Update page list
+$.updatePagesList = () => {
+	var pages_dir = $.fs.readdirSync('./src/', {withFileTypes:true})
 	.filter(d => d.isDirectory())
 	.map(d => d.name);
 
-$.fs.writeFileSync("./gulpfile.js/tasks/vars/pages_list.json", 
+	$.fs.writeFileSync("./gulpfile.js/tasks/vars/pages_list.json", 
 		JSON.stringify({pages: pages_dir})
 	);
+}
+$.updatePagesList();
 
 // ============================ [ Options ] ============================ \\
 
+// Project name
 $.Project_name    =	JSON.parse($.fs.readFileSync("package.json", "utf8"))["name"];
+// List of all pages
 $.pages 		  =	JSON.parse(
 		$.fs.readFileSync("./gulpfile.js/tasks/vars/pages_list.json", "utf8")
 	)["pages"];
+// Current page
 $.start_page 	  = 'main';
+// OS Panel on/off
 $.OpenServer_conn = false;
+// Server port
 $.port 			  = 8282;
+// Proxy (OS Panel)
 $.proxy 		  = $.Project_name;
+// Https on/off
 $.https 		  = true;
+// Certificates dir
+$.CertDir		  = './certificates'
 // debug || info
 $.logLevel 		  = 'info';
 
@@ -76,7 +89,7 @@ $.gulp.task('git',   $.tasks['github'].commit);
 
 /* |||||__________________||||| */
 
-
+// Main task
 $.gulp.task('default',
 	$.gulp.series(
 		$.tasks['index'].index,
@@ -92,6 +105,8 @@ $.gulp.task('default',
 		)
 	)
 );
-
+// Test task
 $.gulp.task('test', defaultTask);
+
+// Build task
 $.gulp.task('build', $.gulp.series($.tasks['clean'].clean, $.tasks['build'].build));
