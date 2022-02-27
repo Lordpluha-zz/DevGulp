@@ -1,12 +1,12 @@
-const git_clone = require('git-clone');
+const git = require('');
 
-var repo = "https://github.com/Lordpluha/DevGulp/tree/main/src/main/html",
+var repo = "https://github.com/Lordpluha/DevGulp.git",
 	targetPath = "src/",
 	options = {},
 	callback = function(event) {};
 
 function CreateNEWPage(event) {
-	git_clone(repo, targetPath, options, callback);
+	git(repo, targetPath);
 }
 
 var pages_dir = $.fs.readdirSync('./src/', {withFileTypes:true})
