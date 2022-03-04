@@ -33,10 +33,19 @@ function browser(event) {
 	if ($.OpenServer_conn == true) {
 		conf.proxy = $.proxy;
 		conf.port = $.port;
-		conf.serveStatic = [
-			`./src/${$.start_page}/html`,
-			`./src/${$.start_page}`
-		];
+		// Check main file type
+		if ($.main_file_type == 'php') {
+			conf.serveStatic = [
+				`./src/${$.start_page}/php`,
+				`./src/${$.start_page}`
+			];
+		} else {
+			conf.serveStatic = [
+				`./src/${$.start_page}/html`,
+				`./src/${$.start_page}`
+			];
+		}
+		
 	} else {
 		conf.server = {
 			baseDir: [`./src/${$.start_page}`, `./src/${$.start_page}/html`]

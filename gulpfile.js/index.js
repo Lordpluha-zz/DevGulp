@@ -50,6 +50,8 @@ $.pages 		  =	JSON.parse(
 $.start_page 	  = 'main';
 // OS Panel on/off
 $.OpenServer_conn = false;
+// Using 'php' only with OpenServer_conn = true!!! (php/html)
+$.main_file_type = 'html'
 // Server port
 $.port 			  = 8282;
 // Proxy (OS Panel)
@@ -93,6 +95,7 @@ $.gulp.task('git',   $.tasks['github'].commit);
 $.gulp.task('default',
 	$.gulp.series(
 		$.tasks['index'].index,
+		$.tasks['index'].php,
 		$.tasks['styles'].styles,
 		$.tasks['scripts'].scripts,
 		$.tasks['images'].images,

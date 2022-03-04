@@ -22,7 +22,8 @@ function images(event) {
 			}) )
 			.pipe(webp())
 			.pipe( $.rname({suffix: '.min'}))
-			.pipe( $.gulp.dest(`./src/${$.start_page}/img/${item1}/`) );
+			.pipe( $.gulp.dest(`./src/${$.start_page}/img/${item1}/`) )
+			.pipe( $.browserSync.reload({ stream:true }) );
 	});
 };
 
