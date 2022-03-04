@@ -193,6 +193,8 @@ Tasks
 | `build`         | build project from src/ to dist/ (copy .min)| tasks/build.js |
 | `default`       | initializate standart processing and serving files on localhost                                                     | index.js   |
 | `test`          | starting auditing of project              | index.js   |
+
+
 Plugins
 --------------------------------------------------
 
@@ -324,10 +326,7 @@ Future opportunities
 --------------------------------------------------
 - [`gulp-changed`] и [`gulp-newer`] 
 - [`tmi`]
-- [`grunt-phantomas`]
 - [`gulp-duration`]
-- [`grunt-conventional-changelog`]
-- [`grunt-usebanner`]
 - [`husky`]
 - [`pug`]
 - [`bower`]
@@ -349,11 +348,4 @@ Future opportunities
 Contact me)
 --------------------------------------------------
 
-[![Gmail][gmail_ico]][gmail_href]
-[![Instagram][instagram_ico]][inst_href]
-
-[gmail_ico]: https://raw.githubusercontent.com/Lordpluha/DevGulp/main/gmail_ico.png  
-[gmail_href]: mailto:Tesluakevlad@gmail.com?subject=DevGulp%20proj.
-
-[instagram_ico]:    https://raw.githubusercontent.com/Lordpluha/DevGulp/main/inst_ico.png
-[inst_href]:        https://www.instagram.com/def.__init__/
+https://github.com/Lordpluha
