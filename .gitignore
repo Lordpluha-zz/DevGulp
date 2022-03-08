@@ -87,9 +87,6 @@ Thumbs.db
 # Папка с собранными файлами проекта
 dist/
 
-# Промежуточный файл node_module<-package.json
-package-lock.json
-
 # Файл конфигурации explorer.exe
 desktop.ini
 
