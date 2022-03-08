@@ -2,7 +2,6 @@
 
 // DataBase of plugins and configs
 const plug 					= require('./vars/styles.vars.js'),
-	  path 					= require('path'),
 	  
 	  autoprefxr_conf 		= require('./configs/styles.js/autoprefixer.config.js'),
 	  sorting_conf 			= require('./configs/styles.js/postcss-sorting.config.js'),
@@ -101,7 +100,7 @@ function styles(event) {
 		.pipe( $.browserSync.stream() );
 }
 
-// Обработка шрифтов !!!
+// Fonts processing
 function fonts(event) {
 	plug.exec(`py ./gulpfile.js/file_for_uploading_fonts_to_scss.py`,
 		(err, stdout, stderr) => {
