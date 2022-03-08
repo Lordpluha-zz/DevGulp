@@ -3,6 +3,7 @@ DevGulp Project
 ###### created by @Lordpluha:wink:
 
 ### Main targets of a project
+
 > Realization gulp-building and processing based on new modern tendation of front-end and back-end dev.
 
 Using
@@ -22,159 +23,160 @@ Main target of gulpfile is using automatisation functions for web-dev, written o
 Structure
 --------------------------------------------------
 <details><summary>Show</summary>
-<!-- tree /A /F -->
- _________
-|         |
-| DevGulp |
-|_________|
-    |
-    |   .eslintrc
-    |   .gitattributes
-    |   .gitignore
-    |   .htaccess
-    |   .stylelintrc.json
-    |   Apache_2.4-PHP_8.0+Nginx_1.21_vhosta.conf
-    |   CONTRIBUTING.md
-    |   gmail_ico.png
-    |   inst_ico.png
-    |   LICENSE
-    |   package-lock.json
-    |   package.json
-    |   postcss.config.js
-    |   README.md
-    |   SECURITY.md
-    |   structure.txt
-    |
-    +---.github
-    |   \---workflows
-    |           codeql-analysis.yml
-    |
-    +---certificates
-    |       localhost-rootCA.crt
-    |       localhost-rootCA.key
-    |       localhost-server.crt
-    |       localhost-server.key
-    |       rootCA.crt
-    |       rootCA.key
-    |       server.crt
-    |       server.key
-    |
-    +---gulpfile.js
-    |   |   file_for_uploading_fonts_to_scss.py
-    |   |   index.js
-    |   |
-    |   \---tasks
-    |       |   build.js
-    |       |   clean.js
-    |       |   CreatePage.js
-    |       |   FileWatcher.js
-    |       |   github.js
-    |       |   images.js
-    |       |   index.js
-    |       |   lighthouse.js
-    |       |   scripts.js
-    |       |   serve.js
-    |       |   styles.js
-    |       |
-    |       +---configs
-    |       |   +---index.js
-    |       |   |       gulp-htmlhint.config.js
-    |       |   |       gulp-htmlmin.config.js
-    |       |   |
-    |       |   \---styles.js
-    |       |           autoprefixer.config.js
-    |       |           cssnano.config.js
-    |       |           doiuse.config.js
-    |       |           gulp-clean-css.config.js
-    |       |           postcss-browser-reporter.config.js
-    |       |           postcss-sorting.config.js
-    |       |           stylelint.config.js
-    |       |
-    |       \---vars
-    |               pages_list.json
-    |               styles.vars.js
-    |
-    \---src
-        \---main
-            +---html
-            |   |   index.html
-            |   |   index.min.html
-            |   |   index.src.html
-            |   |
-            |   \---blocks
-            |           article.html
-            |           aside.html
-            |           footer.html
-            |           header.html
-            |           nav.html
-            |
-            +---img
-            |   +---article
-            |   +---aside
-            |   +---footer
-            |   +---header
-            |   \---nav
-            +---js
-            |   +---plugins
-            |   |   \---HTML5Shiv
-            |   |           html5shiv-master.zip
-            |   |           html5shiv-printshiv.min.js
-            |   |           html5shiv.min.js
-            |   |
-            |   \---scripts
-            |           MYbeauty_fx.js
-            |           scripts.js
-            |           scripts.js.min.map
-            |           scripts.min.js
-            |
-            +---php
-            |   |   index.min.php
-            |   |   index.php
-            |   |
-            |   \---blocks
-            |       |   article.php
-            |       |   aside.php
-            |       |   footer.php
-            |       |   header.php
-            |       |   nav.php
-            |       |
-            |       \---templates
-            \---styles
-                +---css.dist
-                |       styles.css
-                |       styles.css.map
-                |       styles.min.css
+
+     _________
+    |         |
+    | DevGulp |
+    |_________|
+        |
+        |   .eslintrc
+        |   .gitattributes
+        |   .gitignore
+        |   .htaccess
+        |   .stylelintrc.json
+        |   Apache_2.4-PHP_8.0+Nginx_1.21_vhosta.conf
+        |   CONTRIBUTING.md
+        |   gmail_ico.png
+        |   inst_ico.png
+        |   LICENSE
+        |   package-lock.json
+        |   package.json
+        |   postcss.config.js
+        |   README.md
+        |   SECURITY.md
+        |   structure.txt
+        |
+        +---.github
+        |   \---workflows
+        |           codeql-analysis.yml
+        |
+        +---certificates
+        |       localhost-rootCA.crt
+        |       localhost-rootCA.key
+        |       localhost-server.crt
+        |       localhost-server.key
+        |       rootCA.crt
+        |       rootCA.key
+        |       server.crt
+        |       server.key
+        |
+        +---gulpfile.js
+        |   |   file_for_uploading_fonts_to_scss.py
+        |   |   index.js
+        |   |
+        |   \---tasks
+        |       |   build.js
+        |       |   clean.js
+        |       |   CreatePage.js
+        |       |   FileWatcher.js
+        |       |   github.js
+        |       |   images.js
+        |       |   index.js
+        |       |   lighthouse.js
+        |       |   scripts.js
+        |       |   serve.js
+        |       |   styles.js
+        |       |
+        |       +---configs
+        |       |   +---index.js
+        |       |   |       gulp-htmlhint.config.js
+        |       |   |       gulp-htmlmin.config.js
+        |       |   |
+        |       |   \---styles.js
+        |       |           autoprefixer.config.js
+        |       |           cssnano.config.js
+        |       |           doiuse.config.js
+        |       |           gulp-clean-css.config.js
+        |       |           postcss-browser-reporter.config.js
+        |       |           postcss-sorting.config.js
+        |       |           stylelint.config.js
+        |       |
+        |       \---vars
+        |               pages_list.json
+        |               styles.vars.js
+        |
+        \---src
+            \---main
+                +---html
+                |   |   index.html
+                |   |   index.min.html
+                |   |   index.src.html
+                |   |
+                |   \---blocks
+                |           article.html
+                |           aside.html
+                |           footer.html
+                |           header.html
+                |           nav.html
                 |
-                +---css.src
-                |       styles.scss
-                |       _article.scss
-                |       _aside.scss
-                |       _fonts.scss
-                |       _footer.scss
-                |       _header.scss
-                |       _media.scss
-                |       _mixins.scss
-                |       _nav.scss
-                |       _preloader.scss
-                |       _zer0.scss
+                +---img
+                |   +---article
+                |   +---aside
+                |   +---footer
+                |   +---header
+                |   \---nav
+                +---js
+                |   +---plugins
+                |   |   \---HTML5Shiv
+                |   |           html5shiv-master.zip
+                |   |           html5shiv-printshiv.min.js
+                |   |           html5shiv.min.js
+                |   |
+                |   \---scripts
+                |           MYbeauty_fx.js
+                |           scripts.js
+                |           scripts.js.min.map
+                |           scripts.min.js
                 |
-                \---fonts
-                    |   Roboto.zip
+                +---php
+                |   |   index.min.php
+                |   |   index.php
+                |   |
+                |   \---blocks
+                |       |   article.php
+                |       |   aside.php
+                |       |   footer.php
+                |       |   header.php
+                |       |   nav.php
+                |       |
+                |       \---templates
+                \---styles
+                    +---css.dist
+                    |       styles.css
+                    |       styles.css.map
+                    |       styles.min.css
                     |
-                    \---Roboto
-                            LICENSE.txt
-                            Roboto-Black.ttf
-                            Roboto-BlackItalic.ttf
-                            Roboto-Bold.ttf
-                            Roboto-BoldItalic.ttf
-                            Roboto-Italic.ttf
-                            Roboto-Light.ttf
-                            Roboto-LightItalic.ttf
-                            Roboto-Medium.ttf
-                            Roboto-MediumItalic.ttf
-                            Roboto-Regular.ttf
-                            Roboto-Thin.ttf
-                            Roboto-ThinItalic.ttf
+                    +---css.src
+                    |       styles.scss
+                    |       _article.scss
+                    |       _aside.scss
+                    |       _fonts.scss
+                    |       _footer.scss
+                    |       _header.scss
+                    |       _media.scss
+                    |       _mixins.scss
+                    |       _nav.scss
+                    |       _preloader.scss
+                    |       _zer0.scss
+                    |
+                    \---fonts
+                        |   Roboto.zip
+                        |
+                        \---Roboto
+                                LICENSE.txt
+                                Roboto-Black.ttf
+                                Roboto-BlackItalic.ttf
+                                Roboto-Bold.ttf
+                                Roboto-BoldItalic.ttf
+                                Roboto-Italic.ttf
+                                Roboto-Light.ttf
+                                Roboto-LightItalic.ttf
+                                Roboto-Medium.ttf
+                                Roboto-MediumItalic.ttf
+                                Roboto-Regular.ttf
+                                Roboto-Thin.ttf
+                                Roboto-ThinItalic.ttf
+
 </details> 
 
 Tasks
