@@ -184,7 +184,6 @@ Tasks
 
 |  Function name  |               Description                 |   File     |
 |      :---:      | :---                                      |   :---:    |
-| `browser`       | **local server** and inject "on the fly". | tasks/serve.js   |
 | `index`         | processing html calling reload.           | tasks/index.js   |
 | `php`           | processing php, calling reload.           | tasks/index.js   |
 | `styles`        | processing and modificating scss -> css   | tasks/styles.js  |
