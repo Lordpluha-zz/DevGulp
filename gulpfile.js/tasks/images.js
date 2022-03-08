@@ -27,16 +27,6 @@ function images(event) {
 	});
 };
 
-// Video -> .webm and optimization
-function video(event) {
-	console.log("Video converter is epmty");
-};
-
-// Image resizing
-function resz_img(event) {
-	console.log("RESZ_img is epmty");
-};
-
 module.exports = {
 	images: async function() {images()},
 	resz_img: async function() {resz_img()}
