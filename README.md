@@ -6,17 +6,15 @@ DevGulp Project
 
 > Realization gulp-building and processing based on new modern tendation of front-end and back-end dev.
 
-Using
---------------------------------------------------
-Main target of gulpfile is using automatisation functions for web-dev, written on node.js.
+Install Guide
+---------------------------------------------------
 
-> You might have to installed **Node.js** and **git** *in you terminal* !!!
-
-1. Open your terminal **in directory which** you want
-2. Enter this line ```git clone https://github.com/Lordpluha/DevGulp.git```
-3. *Rename your project* in **package.json**
-4. ```npm i``` to install all project depencies
-5. ```npm start``` / ```gulp```
+1. Install **Node.js** and **git** *on your computer*.
+2. Open your terminal **in directory which** you want
+3. Enter this line ```git clone https://github.com/Lordpluha/DevGulp.git```
+4. *Rename your project* in **package.json** and project dir name
+5. ```npm i``` to install all project depencies
+6. ```npm start``` / ```gulp```
 
 **Have a good work)**
 

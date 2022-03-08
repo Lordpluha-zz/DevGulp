@@ -51,7 +51,7 @@ $.start_page 	  = 'main';
 // OS Panel on/off
 $.OpenServer_conn = false;
 // Using 'php' only with OpenServer_conn = true!!! (php/html)
-$.main_file_type = 'html'
+$.main_file_type  = 'html'
 // Server port
 $.port 			  = 8282;
 // Proxy (OS Panel)
