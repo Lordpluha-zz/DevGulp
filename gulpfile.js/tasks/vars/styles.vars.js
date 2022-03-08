@@ -8,24 +8,24 @@ const scss                                  = require('gulp-sass')(require('sass
 /* ___________________ --- | PostCSS plugins | --- ___________________ */
 	
 	// Scss syntax
-	postcss_scss                        = require('postcss-scss'),
+	postcss_scss                        	= require('postcss-scss'),
 	
 	/* <+++++++++++++++ [Preprocessing] +++++++++++++++> */
 
 		// Complite functions for including webp in css
-		webp_css                                = require('webp-in-css/plugin'),
+		webp_css                            = require('webp-in-css/plugin'),
 
 		// Auto convert px -> rem
-		pxtorem                                 =  require('postcss-pxtorem'),
+		pxtorem                             =  require('postcss-pxtorem'),
 
 		// Sqrt()
-		sqrt 							= require('postcss-sqrt'),
+		sqrt 								= require('postcss-sqrt'),
 
 		// Pow()
-		pow 							= require('postcss-pow'),
+		pow 								= require('postcss-pow'),
 
 		// Allow supporting vhw
-		vwh 							= require('postcss-vwh'),
+		vwh 								= require('postcss-vwh'),
 
 	/* <+++++++++++++++ [Linting] +++++++++++++++> */
 
@@ -33,7 +33,7 @@ const scss                                  = require('gulp-sass')(require('sass
 		stylelint                           = require('stylelint'),
 
 		// Analyse supporting
-		doiuse                                  = require('doiuse'),
+		doiuse                              = require('doiuse'),
 
 	/* <+++++++++++++++ [Additional functions] +++++++++++++++> */
 	
@@ -43,22 +43,22 @@ const scss                                  = require('gulp-sass')(require('sass
 	/* <+++++++++++++++ [Postprocessing] +++++++++++++++> */
 	
 		// Automatically detects and combines duplicated css selectors
-		combine_duplicated_selectors 	= require('postcss-combine-duplicated-selectors'),
+		combine_duplicated_selectors 		= require('postcss-combine-duplicated-selectors'),
 
 		// Autoprefixer
 		autoprefixer                        = require('autoprefixer'),
 
 		// Sorting rules
-		postcss_sorting                 = require('postcss-sorting'),
+		postcss_sorting                 	= require('postcss-sorting'),
 
 		// Fix known Browser Bugs
-		fixes 									= require('postcss-fixes'),
+		fixes 								= require('postcss-fixes'),
 
 		// Minificator
-		cssnano                                 = require('cssnano'),
+		cssnano                             = require('cssnano'),
 
 		// Browser reporter
-		browser_reporter                = require('postcss-browser-reporter'),
+		browser_reporter              		= require('postcss-browser-reporter'),
 
 		// immutable-CSS
 
@@ -70,12 +70,13 @@ const scss                                  = require('gulp-sass')(require('sass
 /*                                                       */
 	
 	// Beautifier
-	cleanCSS                                            = require('gulp-clean-css'),
+	cleanCSS                                = require('gulp-clean-css'),
+
 	// Source map
-	srcmap                                      = require('gulp-sourcemaps'),
-	
+	srcmap                                  = require('gulp-sourcemaps'),
+
 	// Execution CMD commands
-	{exec}                                      = require('child_process');
+	{exec}                                  = require('child_process');
 
 
 module.exports = {
@@ -98,7 +99,6 @@ module.exports = {
 	doiuse,
 
 	cleanCSS,
-	// css_beautify,
 	cssnano,
 	
 	browser_reporter,

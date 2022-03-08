@@ -2,48 +2,72 @@
 global.$ = {};
 
 // ============================ [ Plugins ] ============================ \\
-$.gulp = require('gulp');
-
-$.rname = require('gulp-rename');
+$.gulp 	  = require('gulp');
+$.rname   = require('gulp-rename');
+$.path 	  = require('path');
+$.fs      = require('fs');
 $.plumber = require('gulp-plumber');
-// Not connected
-$.shell = require('gulp-shell');
-// $.fs  = require('fs');
-
-
 
 // ========================== [ External files ] ========================== \\
 
 $.tasks = {
-	'index': 		require('./tasks/index.js'),
-	'styles': 		require('./tasks/styles.js'),
-	'scripts': 	 	require('./tasks/scripts.js'),
-	'images': 		require('./tasks/images.js'),
+	'index': 			require('./tasks/index.js'),
+	'styles': 			require('./tasks/styles.js'),
+	'scripts': 	 		require('./tasks/scripts.js'),
+	'images': 			require('./tasks/images.js'),
 
-	'FileWatcher': 	require('./tasks/FileWatcher.js'),
-	'serve': 		require('./tasks/serve.js'),
+	'FileWatcher': 		require('./tasks/FileWatcher.js'),
+	'serve': 			require('./tasks/serve.js'),
 
-	'github': 		require('./tasks/github.js'),
+	'github': 			require('./tasks/github.js'),
 
-	'clean': 		require('./tasks/clean.js'),
-	'build': 		require('./tasks/build.js'),
-
+	'clean': 			require('./tasks/clean.js'),
+	'build': 			require('./tasks/build.js'),
+	'CreatePage': 		require('./tasks/CreatePage.js')
 };
+
+// Update page list
+$.updatePagesList = () => {
+	var pages_dir = $.fs.readdirSync('./src/', {withFileTypes:true})
+	.filter(d => d.isDirectory())
+	.map(d => d.name);
+
+	$.fs.writeFileSync("./gulpfile.js/tasks/vars/pages_list.json", 
+		JSON.stringify({pages: pages_dir})
+	);
+}
+$.updatePagesList();
 
 // ============================ [ Options ] ============================ \\
 
-$.Project_name = 	'DevGulp';
-$.pages = 			['main'];
-$.start_page = 		$.pages[0];
-$.OpenServer_conn = 'False';
-$.port = 			8282;
-$.proxy = 			$.Project_name;
+// Project name
+$.Project_name    =	JSON.parse($.fs.readFileSync("package.json", "utf8"))["name"];
+// List of all pages
+$.pages 		  =	JSON.parse(
+		$.fs.readFileSync("./gulpfile.js/tasks/vars/pages_list.json", "utf8")
+	)["pages"];
+// Current page
+$.start_page 	  = 'main';
+// OS Panel on/off
+$.OpenServer_conn = false;
+// Using 'php' only with OpenServer_conn = true!!! (php/html)
+$.main_file_type = 'html'
+// Server port
+$.port 			  = 8282;
+// Proxy (OS Panel)
+$.proxy 		  = $.Project_name;
+// Https on/off
+$.https 		  = true;
+// Certificates dir
+$.CertDir		  = './certificates'
+// debug || info
+$.logLevel 		  = 'info';
 
 // ============================ [ Functions ] ============================ \\
 
 // Test info
 function defaultTask(cb) {
-	console.log('Created by Lordpluha!!! :-)')
+	console.log('Created by Lordpluha!!! :-)');
   	cb();
 };
 
@@ -61,14 +85,17 @@ $.gulp.task('js',    $.tasks['scripts'].scripts);
 
 $.gulp.task('img', 	 $.tasks['images'].images);
 
+$.gulp.task('NewPage', $.tasks['CreatePage'].CreatePage);
+
 $.gulp.task('git',   $.tasks['github'].commit);
 
 /* |||||__________________||||| */
 
-
+// Main task
 $.gulp.task('default',
 	$.gulp.series(
 		$.tasks['index'].index,
+		$.tasks['index'].php,
 		$.tasks['styles'].styles,
 		$.tasks['scripts'].scripts,
 		$.tasks['images'].images,
@@ -81,8 +108,8 @@ $.gulp.task('default',
 		)
 	)
 );
-
+// Test task
 $.gulp.task('test', defaultTask);
 
-
-$.gulp.task('build', $.gulp.series($.tasks['clean'].clean, $.tasks['build'].build /*, $.tasks['analytics'].lighthouse*/));
+// Build task
+$.gulp.task('build', $.gulp.series($.tasks['clean'].clean, $.tasks['build'].build));

@@ -1,5 +1,4 @@
-// Работа с Git
-
+// Git funcs
 function start_project() {
 
 };

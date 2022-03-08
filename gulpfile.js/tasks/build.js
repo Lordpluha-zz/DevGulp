@@ -1,4 +1,4 @@
-// Сборка проэкта
+// Project build
 async function build() {
 	for (var i = 0; i <= $.pages.length; i++) {
 		return $.gulp.src([
