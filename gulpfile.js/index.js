@@ -57,8 +57,8 @@ $.port 			  = 8282;
 // Proxy (OS Panel)
 $.proxy 		  = $.Project_name;
 // Https on/off
-$.https 		  = true;
-// Certificates dir
+$.https 		  = false;
+// Certificates dir (working only with https = true)
 $.CertDir		  = './certificates'
 // debug || info
 $.logLevel 		  = 'info';
