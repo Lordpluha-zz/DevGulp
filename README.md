@@ -7,9 +7,9 @@ DevGulp Project
 > Realization gulp-building and processing based on new modern tendation of front-end and back-end dev.
 
 Install Guide
----------------------------------------------------
+--------------------------------------------------
 
-1. Install **Node.js** and **git** *on your computer*.
+1. Install **[`Node.js`]** and **[`git`]** *on your computer*.
 2. Open your terminal **in directory which** you want
 3. Enter this line ```git clone https://github.com/Lordpluha/DevGulp.git```
 4. *Rename your project* in **package.json** and project dir name
@@ -17,6 +17,9 @@ Install Guide
 6. ```npm start``` / ```gulp```
 
 **Have a good work)**
+
+[`Node.js`]: https://nodejs.org/
+[`git`]:     https://git-scm.com/downloads
 
 Structure
 --------------------------------------------------
@@ -174,22 +177,20 @@ Structure
                                 Roboto-Regular.ttf
                                 Roboto-Thin.ttf
                                 Roboto-ThinItalic.ttf
-
 </details> 
 
 Tasks
 --------------------------------------------------
 
-|  Function name  |               Description                 |   File     |
-|      :---:      | :---                                      |   :---:    |
-| `index`         | processing html calling reload.           | tasks/index.js   |
-| `php`           | processing php, calling reload.           | tasks/index.js   |
-| `styles`        | processing and modificating scss -> css   | tasks/styles.js  |
-| `fonts`         | upload fonts to _fonts.css by using file_for_uploading_fonts_to_css.py                            | tasks/styles.js  | 
-| `js`            | processing javascript, calling reload.    | tasks/scripts.js |
-| `images`        | processing images, calling reload.        | tasks/images.js  |
-| `NewPage`       | create new page 'main'                    | tasks/CreatePage.js |
-| `build`         | build project from src/ to dist/ (copy .min)| tasks/build.js |
+|  Function name  |               Description                 |     File       |
+|      :---:      | :---                                      |     :---:      |
+| `index`         | processing html calling reload.           |tasks/index.js  |
+| `php`           | processing php, calling reload.           |tasks/index.js  |
+| `styles`        | processing and modificating scss -> css   |tasks/styles.js | `fonts`         | upload fonts to _fonts.css by using file_for_uploading_fonts_to_css.py                            |tasks/styles.js| 
+| `js`            | processing javascript, calling reload.    |tasks/scripts.js|
+| `images`        | processing images, calling reload.        |tasks/images.js |
+| `NewPage`       | create new page 'main'                    |tasks/CreatePage.js|
+| `build`         | build project from src/ to dist/ (copy .min)|tasks/build.js|
 | `default`       | initializate standart processing and serving files on localhost                                                     | index.js   |
 | `test`          | starting auditing of project              | index.js   |
 
